@@ -2,15 +2,125 @@
 
 namespace app\controllers;
 
-class TestController extends AppController
+use Yii;
+use app\models\Fanlar;
+use app\models\TestSearch;
+use yii\web\Controller;
+use yii\web\NotFoundHttpException;
+use yii\filters\VerbFilter;
+use yii\web\Response;
+use app\models\Test;
+use yii\db\Expression;
+/**
+ * TestController implements the CRUD actions for Test model.
+ */
+class TestController extends Controller
 {
+    /**
+     * {@inheritdoc}
+     */
+    public function behaviors()
+    {
 
-    public function actionList() {
-        return $this->render('list');
+        return [
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['POST'],
+                ],
+            ],
+        ];
     }
+    public function actionBegin($sub_id)
+    {
+        $this->layout = 'test';
+        $session = Yii::$app->session;
+        $session->remove('test');
+        $test = Test::find()->where(['fan'=>$sub_id])->orderBy(new Expression('rand()'))->all();
+        $fan = Fanlar::findOne($sub_id);
+        $session['soni'] = count($test);
+        Yii::$app->view->title = $fan->nomi . ' | Thompson school';
+        $session['javoblar'] = [];
+        $data = [];
+        foreach($test as $t){
+            $data[] = $t->id;
+        }
 
-    public function actionTest() {
-        return $this->render('test');
+        $session['test'] = $data;
+        return $this->render('test', [
+            'sub_id' => $sub_id,
+            'test' => $test,
+        ]);
+         
     }
+    public function actionCheck()
+    {
 
+    if (Yii::$app->request->isAjax) {
+        $session = Yii::$app->session;
+        $data = Yii::$app->request->post();
+        $value = explode("-", $data['answer']);
+
+        $javob = $session['javoblar'];
+        $bool = true;
+        $i = 0;
+        foreach ( $javob as $j){
+            if ($j['test_id'] == $value[1]){                
+                unset($javob[$i]);
+                $bool = false;
+                break;
+            }
+            $i++;
+        }
+        
+        $tanlov = [
+            "test_id" => $value[1],
+            "javob" => $value[0]
+        ];
+        if ($bool){            
+            $bir = $session['javoblar'];
+            $bir[] = $tanlov;
+            $session['javoblar'] = $bir;
+        }else{
+            $bir = $session['javoblar'];
+            $bir[$i] = $tanlov;
+            $session['javoblar'] = $bir;
+        }  
+      
+      }
+    }
+    public function actionTestreview()
+    {   
+        $session = Yii::$app->session;
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        return $session['test'];
+    }    
+    public function actionEnd()
+    {   
+        $this->layout = 'test';
+        Yii::$app->view->title = 'Congratulation | Thompson school';
+        return $this->render('javob');
+    }    
+    public function actionTestasl()
+    {   
+        $session = Yii::$app->session;
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        return $session['asl'];
+    }    
+    public function actionTestr()
+    {   
+        $session = Yii::$app->session;
+        $javob = $session['javoblar'];
+        $bool = true;
+        
+        foreach ($javob as $j){
+            print_r($j['test_id']);echo "<br>";
+        }
+    }
+    public function actionAnswerreview()
+    {   
+        $session = Yii::$app->session;
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        return $session['javoblar'];
+    }
 }

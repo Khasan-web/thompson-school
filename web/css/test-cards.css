@@ -433,10 +433,6 @@ html {
     transition: .3s ease;
 }
 
-#test-cards .test-cards-item .for-buttons a.btn:hover {
-    margin-top: -2px;
-}
-
 .learn-more,
 .learn-less {
     color: #f2f2f2;
@@ -473,4 +469,10 @@ article[data-readmore] {
     margin-left: 4px;
     width: 8px !important;
     height: 6px !important;
+}
+
+
+#test h2 {
+    font-size: 48px;
+    font-weight: 700;
 }

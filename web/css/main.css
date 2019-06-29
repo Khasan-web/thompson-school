@@ -38,6 +38,13 @@ input {
     .md {
         display: none;
     }
+    #contact .form .form-group {
+        padding-right: 30px;
+    }
+
+    .tests-info {
+        padding-left: 45px;
+    }
 }
 
 body,
@@ -55,6 +62,7 @@ html {
     position: absolute;
     height: 1031px;
     width: 100%;
+    z-index: -1;
 }
 
 @media screen and (max-width:991px) {
@@ -97,7 +105,7 @@ html {
 }
 
 .navbar-nav .nav-link:hover {
-    color: #fbcd36;
+    color: #fbcd36!important;
 }
 
 @media screen and (max-width:1200px) {
@@ -246,7 +254,7 @@ html {
     margin-top: 0;
     background: 0 0;
     border: 0;
-    border-bottom: 2px solid #a61d31 !important;
+    border-bottom: 2px solid #fbcd36!important;
     -webkit-border-radius: 0;
     border-radius: 0;
     color: #000;
@@ -397,6 +405,7 @@ html {
 @media screen and (max-width:991px) {
     .main-title {
         font-size: 36px;
+        margin-top: 50px;
     }
 }
 
@@ -1094,7 +1103,7 @@ html {
 
 @media screen and (max-width:768px) {
     #courses .course-slider-item h5 {
-        font-size: 22px;
+        font-size: 20px;
         margin-bottom: 26px;
         display: inline-block;
     }
@@ -1739,7 +1748,6 @@ html {
 
 #target .left p {
     font-weight: 300;
-    padding-right: 50px;
     color: #fff;
 }
 
@@ -1748,10 +1756,6 @@ html {
     padding-left: 50px;
 }
 
-#target .right .form-group {
-    padding: 0 20px;
-    margin: 10px auto;
-}
 
 #target .right .form-group label,
 .block .name {
@@ -1921,9 +1925,7 @@ html {
     opacity: 1;
 }
 
-#contact .form .form-group {
-    padding-right: 30px;
-}
+
 
 #contact .form .form-row {
     margin-top: -30px;
@@ -2143,6 +2145,18 @@ nav {
     font-weight: 700;
     text-align: center;
     margin-bottom: 100px;
+}
+
+.lang {
+    margin-top: 9px!important;
+}
+
+.lang .dropdown-content {
+    padding-right: 10px!important;
+}
+
+.form-label {
+    cursor: text!important;
 }
 
 @media (max-width: 768px) {

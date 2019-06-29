@@ -4,12 +4,14 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Talabalar;
 
-class SiteController extends AppController
+class SiteController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -60,7 +62,22 @@ class SiteController extends AppController
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new Talabalar();
+        $session = Yii::$app->session;
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            $session = Yii::$app->session;
+            $session['fio'] = $_POST['Talabalar']['fio'];
+            $session['mail'] = $_POST['Talabalar']['pochta'];
+            $session['tel'] = $_POST['Talabalar']['tel'];
+            return $this->redirect(['talabalar/selsub']);
+        }
+        return $this->render('index', compact('model'));
+    }
+    public function actionCourse()
+    {
+        $this->layout = 'navbar';
+        return $this->render('course');
     }
 
     /**
@@ -97,4 +114,32 @@ class SiteController extends AppController
         return $this->goHome();
     }
 
+    /**
+     * Displays contact page.
+     *
+     * @return Response|string
+     */
+    public function actionContact()
+    {
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        }
+        return $this->render('contact', [
+            'model' => $model,
+        ]);
+    }
+
+    /**
+     * Displays about page.
+     *
+     * @return string
+     */
+    public function actionAbout()
+    {
+
+        return $this->render('about');
+    }
 }
