@@ -14,7 +14,7 @@ use yii\db\Expression;
 /**
  * TestController implements the CRUD actions for Test model.
  */
-class TestController extends Controller
+class TestController extends AppController
 {
     /**
      * {@inheritdoc}
@@ -39,7 +39,7 @@ class TestController extends Controller
         $test = Test::find()->where(['fan'=>$sub_id])->orderBy(new Expression('rand()'))->all();
         $fan = Fanlar::findOne($sub_id);
         $session['soni'] = count($test);
-        Yii::$app->view->title = $fan->nomi . ' | Thompson school';
+        $this->setMeta($fan->nomi . ' 😀👌✅', 'img/site-img.jpg');
         $session['javoblar'] = [];
         $data = [];
         foreach($test as $t){
@@ -98,7 +98,7 @@ class TestController extends Controller
     public function actionEnd()
     {   
         $this->layout = 'test';
-        Yii::$app->view->title = 'Congratulation | Thompson school';
+        $this->setMeta($fan->nomi . ' Congratulation 👏👏👏', 'img/site-img.jpg');
         return $this->render('javob');
     }    
     public function actionTestasl()

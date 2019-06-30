@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * FanlarController implements the CRUD actions for Fanlar model.
  */
-class FanlarController extends Controller
+class FanlarController extends AppController
 {
     /**
      * {@inheritdoc}

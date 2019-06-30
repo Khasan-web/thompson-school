@@ -29,7 +29,7 @@
                         </article>
                     </div>
                     <div class="for-buttons">
-                        <a href="/web/test/begin?sub_id=<?= $fan->id ?>" class="btn">Start test</a>
+                        <a href="/test/begin?sub_id=<?= $fan->id ?>" class="btn">Start test</a>
                     </div>
                 </div>
 

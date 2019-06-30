@@ -19,8 +19,9 @@ AppAsset::register($this);
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-  <meta name="author" content="" />
-  <meta name="description" content="Some text" />
+  <meta name="author" content="Thompson school" />
+  <meta name="keywords" content="курсы английского языка IELTS математика быстрый английский иностранные языки математика для поступления в вузы томпсон скул английский для детей детский английский English courses IELTS mathematics fast english foreign languages mathematics for entry to higher education Thomson schools english for children children english">
+  <meta name="description" content="Thompson school - английский, которого вы заслуживаете и многое другое! 🚀✅" />
   <link rel="icon" href="/web/img/icons/favicon.png" />
   <link rel="stylesheet" href="/web/css/libs.min.css" />
   <link rel="stylesheet" href="/web/css/main.css" />
@@ -139,7 +140,7 @@ AppAsset::register($this);
           </div>
           <!-- Circles and video-sm-->
           <div class="col-md-4 col-sm-10 video-sm d-none">
-            <div class="circle-wrapper">
+            <div class="circle-wrapper header-circle">
               <div class="circle circle-1">
                 <div class="circle circle-2">
                   <div class="circle circle-3"></div>

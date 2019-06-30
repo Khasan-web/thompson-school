@@ -54,7 +54,7 @@ use yii\helpers\Html;
     </div>
 </section>
 <!-- Why our courses-->
-<section id="why" class="space-section">
+<section id="why">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 why-item">
@@ -63,13 +63,16 @@ use yii\helpers\Html;
                 <p>С нами вы точно сможете изучить языки максимально эффективно и максимально в короткий срок. Вас ждёт: профессиональные и крутые преподаватели, доброжелательная администрация, интерактивные занятия и мощная доза мотивации!</p>
             </div>
             <div class="col-lg-6 video">
-                <div class="circle circle-1">
-                    <div class="circle circle-2">
-                        <div class="circle circle-3">
-                            <div class="circle circle-4"></div>
+                <div class="circle-wrapper">
+                    <div class="circle circle-1">
+                        <div class="circle circle-2">
+                            <div class="circle circle-3">
+                                <div class="circle circle-4"></div>
+                            </div>
                         </div>
                     </div>
-                </div><a class="video-button" data-toggle="modal" data-target="#video-modal"><span class="triangle"></span></a>
+                </div>
+                <a class="video-button" data-toggle="modal" data-target="#video-modal"><span class="triangle"></span></a>
             </div>
         </div>
     </div>
@@ -164,12 +167,16 @@ use yii\helpers\Html;
     <div class="container">
         <div class="row">
             <div class="col-lg-7 left">
-                <h1>Пройди тест и узнай<br /><span>что выбрать</span></h1>
-                <p>Пройдите тест, после которого мы определим ваш<br />уровень и наиболее подходящие курс под ваши знания <br />и цели!</p>
+                <h1>Пройди тест и узнай<br class="hide-on-mob" /><span>что выбрать</span></h1>
+                <p>Пройдите тест, после которого мы определим ваш<br class="hide-on-mob" />уровень и наиболее подходящие курс под ваши знания <br />и цели!</p>
             </div>
             <div class="col-lg-5 right">
 
-                <?php $form = ActiveForm::begin(); ?>
+                <?php $form = ActiveForm::begin([
+                    'options' => [
+                        'class' => 'w-100'
+                     ]
+                ]); ?>
 
                 <div class="form-group col-lg-12 col-md-10">
                     <label class="form-label" for="name_first">Ваше имя</label>
@@ -224,16 +231,24 @@ use yii\helpers\Html;
             <div class="comment-slider-item">
                 <div class="row center">
                     <div class="block col-lg-7"><img class="avatar" src="/web/img/comment-avatar.png" /><span class="quote"><img src="/web/img/icons/quote.png" /></span>
-                        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-                        <p class="name">IELTS 8.5 <span>Nikki Fenn</span></p>
+                        <p class="text">«Я очень благодарна THOMPSON SCHOOL и их курсу Speed Up за такие замечательные уроки и просто идеальных педагогов! За какие-то 2 месяца, уровень моего английского значительно вырос, что позволило мне сдать IELTS EXAM на невообразимые для меня 6.0 баллов. Это дало мне возможность подавать документы во многие международные ВУЗы! Моя мечта сбылась!»</p>
+                        <p class="name">Родитель <span>Nikki Fenn</span></p>
                     </div>
                 </div>
             </div>
             <div class="comment-slider-item">
                 <div class="row center">
                     <div class="block col-lg-7"><img class="avatar" src="/web/img/comment-avatar.png" /><span class="quote"><img src="/web/img/icons/quote.png" /></span>
-                        <p class="text"> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip</p>
-                        <p class="name">IELTS 8.0 <span>Nikki Menn </span></p>
+                        <p class="text">«THOMPSON SCHOOL- Это отличный выбор для изучения английского языка. Школа найдёт подход ко всем и каждому. Мне очень нравятся уроки и мой учитель. Я вижу прогресс в своём английском, который я совсем не знал ранее, и это самое главное для меня!»</p>
+                        <p class="name">Ученик <span>Nikki Menn </span></p>
+                    </div>
+                </div>
+            </div>
+            <div class="comment-slider-item">
+                <div class="row center">
+                    <div class="block col-lg-7"><img class="avatar" src="/web/img/comment-avatar.png" /><span class="quote"><img src="/web/img/icons/quote.png" /></span>
+                        <p class="text">«Я хочу поблагодарить учебный центр, которому мы доверили своего ребёнка пол года назад, за высокий профессионализм и конечно, за бдительность и любовь к детям. Каждый раз мой сын возвращается домой после THOMPSON KIDS и на эмоциях рассказывает о том, что он узнал на уроке, о своих новых друзьях и развивающих играх, в которые они играют на уроках! Учительница по английскому в школе стала очень часто хвалить сына, ведь уровень его знаний значительно вырос. Теперь у моего ребёнка твёрдая 5 по его ныне любимому в школе предмету!»</p>
+                        <p class="name">Родитель <span>Nikki Menn </span></p>
                     </div>
                 </div>
             </div>
@@ -343,7 +358,7 @@ use yii\helpers\Html;
 <!-- Contact-->
 <section id="contact">
     <div class="container">
-        <h1> <span>Наши контакты </span>и форма <br />обратной связи</h1>
+        <h1> <span>Наши контакты </span>и форма <br class="hide-on-mob" />обратной связи</h1>
         <div class="row center">
             <div class="col-lg-3 address">
                 <div class="row">

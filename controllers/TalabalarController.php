@@ -13,7 +13,7 @@ use yii\filters\VerbFilter;
 /**
  * TalabalarController implements the CRUD actions for Talabalar model.
  */
-class TalabalarController extends Controller
+class TalabalarController extends AppController
 {
     /**
      * {@inheritdoc}
@@ -51,6 +51,7 @@ class TalabalarController extends Controller
     {
         $this->layout = 'test';
         $model = Fanlar::find()->where(['status'=>1])->all();
+        $this->setMeta('Our Tests 📑✅', 'img/site-img.jpg');
         return $this->render('selsub', [
             'model' => $model
         ]);

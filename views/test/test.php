@@ -51,7 +51,7 @@ $session = Yii::$app->session;
         <hr>
             <?php $i++; endforeach;?>
             <div id="result"></div>
-            <a class="get-result btn" href="/web/test/end">Get my result!</a>
+            <a class="get-result btn" href="/test/end">Get my result!</a>
             <br>
             <br>
         </div>

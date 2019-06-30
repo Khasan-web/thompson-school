@@ -7,7 +7,7 @@ use yii\helpers\Url;
 class AppController extends Controller {
 
     protected function setMeta($title = null, $keywords = null, $description = null, $img = null) {
-        $this->view->title = $title . ' | Infinity Roses';
+        $this->view->title = $title;
         $this->view->registerMetaTag(["name" => "keywords", "content" => "$keywords"]);
         $this->view->registerMetaTag(["name" => "description", "content" => "$description"]);
         // social networks

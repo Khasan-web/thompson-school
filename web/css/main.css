@@ -54,33 +54,25 @@ html {
     padding-right: 0 !important;
 }
 
-.home-bg {
+#main {
     background: url(/web/img/building-bg.png);
     -webkit-background-size: cover;
     background-size: cover;
     background-repeat: no-repeat;
-    position: absolute;
-    height: 1031px;
     width: 100%;
-    z-index: -1;
+    position: relative;
+    z-index: 2;
 }
 
 @media screen and (max-width:991px) {
-    .home-bg {
+    #main {
         background: #a61d31;
         padding-bottom: 200px;
-        height: 850px;
-    }
-}
-
-@media screen and (min-width:991px) {
-    .home-bg {
-        top: 0;
     }
 }
 
 @media screen and (max-width:768px) {
-    .home-bg {
+    #main {
         padding-bottom: 100px;
     }
 }
@@ -254,12 +246,19 @@ html {
     margin-top: 0;
     background: 0 0;
     border: 0;
-    border-bottom: 2px solid #fbcd36!important;
     -webkit-border-radius: 0;
     border-radius: 0;
     color: #000;
     font-weight: 500;
     padding-left: 0;
+}
+
+#take-test .right .form-group input {
+    border-bottom: 2px solid #fbcd36!important;
+}
+
+#order-call .modal-body .form-group input {
+    border-bottom: 2px solid #a61d31!important;
 }
 
 #header .lang,
@@ -855,6 +854,10 @@ html {
     }
 }
 
+.text {
+    line-height: 1.6rem!important;
+}
+
 #why,
 #why .video .video-button {
     display: -webkit-box;
@@ -969,13 +972,11 @@ html {
     #why .video .circle-1 {
         width: 300px;
         height: 300px;
-        opacity: 1;
     }
 
     #why .video .circle-2 {
         width: 600px;
         height: 600px;
-        opacity: 1;
     }
 
     #why .video .circle-3 {
@@ -1074,6 +1075,9 @@ html {
 @media screen and (max-width:768px) {
     #courses {
         padding-top: 170px;
+    }
+    .text {
+        font-size: 15px!important;
     }
 }
 
@@ -1421,14 +1425,21 @@ html {
     background: #a61d31;
     -webkit-clip-path: polygon(0% 0%, 50% 12%, 100% 0%, 100% 88%, 50% 100%, 0 87%);
     clip-path: polygon(0% 0%, 50% 12%, 100% 0%, 100% 88%, 50% 100%, 0 87%);
-    height: 866px;
+    height: 1000px;
+}
+#comments .container {
+    padding-top: 100px;
 }
 
 @media screen and (max-width:991px) {
     #comments {
         -webkit-clip-path: unset;
         clip-path: unset;
-        height: 700px;
+        height: 800px;
+        padding-top: 50px!important;
+    }
+    .space-section {
+        padding: 100px 0!important;
     }
 }
 
@@ -1864,7 +1875,7 @@ html {
     }
 
     #target .right {
-        padding-left: 0;
+        padding-left: 15px;
     }
 
     #target .right .center {
@@ -2133,7 +2144,7 @@ footer h5 {
 }
 
 .space-section {
-    padding: 150px 0!important;
+    padding: 150px 0;
 }
 
 nav {
@@ -2159,10 +2170,18 @@ nav {
     cursor: text!important;
 }
 
+.help-block {
+    display: none!important;
+}
+
 @media (max-width: 768px) {
     .test-button {
         width: 250px!important;
         height: 60px!important;
         line-height: 60px!important;
+    }
+
+    .hide-on-mob {
+        display: none!important;
     }
 }

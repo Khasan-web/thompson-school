@@ -11,7 +11,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Talabalar;
 
-class SiteController extends Controller
+class SiteController extends AppController
 {
     /**
      * {@inheritdoc}
@@ -72,6 +72,8 @@ class SiteController extends Controller
             $session['tel'] = $_POST['Talabalar']['tel'];
             return $this->redirect(['talabalar/selsub']);
         }
+
+        $this->setMeta('Thompson school 😀📕', 'img/site-img.jpg');
         return $this->render('index', compact('model'));
     }
     public function actionCourse()

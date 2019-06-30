@@ -74,6 +74,19 @@ $(document).ready(function() {
         moreLink: '<a href="#" class="learn-more">Learn more <span><img src="src/img/icons/test-chevron-down.png"></span></a>',
         lessLink: '<a href="#" class="learn-less">Learn more <span><img src="src/img/icons/test-chevron-up.png"></span></a>'
     });
+
+    $('form').on('submit', function() {
+        var valid = true;
+        $(this).find('input').each(function(i) {
+            if (!$(this).val()) {
+                $(this).focus();
+                valid = false;
+                return false
+            }
+        });
+        return valid;
+    });
+
 })
 
 function openCity(evt, cityName) {
