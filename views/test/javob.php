@@ -26,7 +26,7 @@ $model->fan = $session['fan'];
 $model->save();
 ?>
 
-<section id="main" style="margin: 113px 0;">
+<section id="main" style="margin: 113px 0; background: #fff!important">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-10 col-10 center">

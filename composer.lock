@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ac76cd2f003995bafbcf0e01d4d9677",
+    "content-hash": "5fab93c4c3f2210b1dcdb07ae50e2c9c",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -32,7 +32,7 @@
             "version": "3.3.11",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobinHerbots/Inputmask.git",
+                "url": "git@github.com:RobinHerbots/Inputmask.git",
                 "reference": "5e670ad62f50c738388d4dcec78d2888505ad77b"
             },
             "dist": {
@@ -325,54 +325,6 @@
                 "html"
             ],
             "time": "2018-02-23T01:58:20+00:00"
-        },
-        {
-            "name": "ikimea/browser",
-            "version": "1.12.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Ikimea/Browser.git",
-                "reference": "3fb8a2498ed36d49832d95f1da0c4cc055a64728"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Ikimea/Browser/zipball/3fb8a2498ed36d49832d95f1da0c4cc055a64728",
-                "reference": "3fb8a2498ed36d49832d95f1da0c4cc055a64728",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Ikimea\\Browser\\": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ikimea",
-                    "homepage": "http://www.ikimea.com"
-                },
-                {
-                    "name": "Gary White",
-                    "homepage": "http://www.apptools.com/phptools/browser/"
-                },
-                {
-                    "name": "Chris Schuld",
-                    "homepage": "http://chrisschuld.com"
-                }
-            ],
-            "description": "Detecting the user’s browser",
-            "homepage": "http://www.ikimea.com",
-            "keywords": [
-                "browser"
-            ],
-            "time": "2015-08-26T20:05:14+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -670,211 +622,6 @@
                 "shim"
             ],
             "time": "2019-02-06T07:57:58+00:00"
-        },
-        {
-            "name": "webvimark/bootstrap-switch",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webvimark/bootstrap-switch.git",
-                "reference": "c7493ba37747a83951cd95acf876668cbc0aba7f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/bootstrap-switch/zipball/c7493ba37747a83951cd95acf876668cbc0aba7f",
-                "reference": "c7493ba37747a83951cd95acf876668cbc0aba7f",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webvimark\\extensions\\BootstrapSwitch\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "BootstrapSwitch extension for yii 2",
-            "time": "2014-06-23T10:35:32+00:00"
-        },
-        {
-            "name": "webvimark/components",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webvimark/components.git",
-                "reference": "805b7ecfaea1654a8c0f47bc007497c97bdc9613"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/components/zipball/805b7ecfaea1654a8c0f47bc007497c97bdc9613",
-                "reference": "805b7ecfaea1654a8c0f47bc007497c97bdc9613",
-                "shasum": ""
-            },
-            "require": {
-                "webvimark/helpers": "^1.0.0",
-                "webvimark/image": "^1.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webvimark\\components\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Components for yii 2",
-            "time": "2016-06-28T09:29:18+00:00"
-        },
-        {
-            "name": "webvimark/date-range-picker",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webvimark/date-range-picker.git",
-                "reference": "195826787e1e516cb101a5a5720ffa42f3255210"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/date-range-picker/zipball/195826787e1e516cb101a5a5720ffa42f3255210",
-                "reference": "195826787e1e516cb101a5a5720ffa42f3255210",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webvimark\\extensions\\DateRangePicker\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "dangrossman daterangepicker yii 2 gridview",
-            "time": "2017-02-27T19:12:56+00:00"
-        },
-        {
-            "name": "webvimark/grid-bulk-actions",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webvimark/grid-bulk-actions.git",
-                "reference": "c15cc98cc926a4ec0537a08d12ed25208c024440"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/grid-bulk-actions/zipball/c15cc98cc926a4ec0537a08d12ed25208c024440",
-                "reference": "c15cc98cc926a4ec0537a08d12ed25208c024440",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webvimark\\extensions\\GridBulkActions\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Bulk actions extension for yii 2 gridview",
-            "time": "2016-10-25T06:25:33+00:00"
-        },
-        {
-            "name": "webvimark/grid-page-size",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webvimark/grid-page-size.git",
-                "reference": "cb0163614e34ebb0319ef436da6db755f30546d2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/grid-page-size/zipball/cb0163614e34ebb0319ef436da6db755f30546d2",
-                "reference": "cb0163614e34ebb0319ef436da6db755f30546d2",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webvimark\\extensions\\GridPageSize\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Grid page size extension for yii 2 gridview",
-            "time": "2016-10-25T06:28:39+00:00"
-        },
-        {
-            "name": "webvimark/helpers",
-            "version": "1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webvimark/helpers.git",
-                "reference": "7bb59438d50149cec8233f3b509dd686200ea567"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/helpers/zipball/7bb59438d50149cec8233f3b509dd686200ea567",
-                "reference": "7bb59438d50149cec8233f3b509dd686200ea567",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webvimark\\helpers\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Helpers for yii 2",
-            "time": "2016-10-03T08:50:29+00:00"
-        },
-        {
-            "name": "webvimark/image",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webvimark/image.git",
-                "reference": "18a3f257b55d0670086b4ccdac005fe376ad7c21"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/image/zipball/18a3f257b55d0670086b4ccdac005fe376ad7c21",
-                "reference": "18a3f257b55d0670086b4ccdac005fe376ad7c21",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webvimark\\image\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Kohana image lib wrapper for yii 2",
-            "time": "2014-07-02T07:33:43+00:00"
-        },
-        {
-            "name": "webvimark/module-user-management",
-            "version": "1.0.13",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/webvimark/user-management.git",
-                "reference": "48adb6cc53fc0a7da34dbf31bba47a0ef8d35cd8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/webvimark/user-management/zipball/48adb6cc53fc0a7da34dbf31bba47a0ef8d35cd8",
-                "reference": "48adb6cc53fc0a7da34dbf31bba47a0ef8d35cd8",
-                "shasum": ""
-            },
-            "require": {
-                "ikimea/browser": "1.12.0",
-                "webvimark/bootstrap-switch": "^1.0.0",
-                "webvimark/components": "^1.0.0",
-                "webvimark/date-range-picker": "^1.0.0",
-                "webvimark/grid-bulk-actions": "^1.0.0",
-                "webvimark/grid-page-size": "^1.0.0",
-                "webvimark/helpers": "^1.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "webvimark\\modules\\UserManagement\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "User with improved RBAC",
-            "time": "2016-10-14T10:53:00+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -1511,33 +1258,37 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.5.2",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "9f83dded91781a01c63574e387eaa769be769115"
+                "reference": "dc784032a3f6f4e7a4b882e272b771f6fe4c37cf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9f83dded91781a01c63574e387eaa769be769115",
-                "reference": "9f83dded91781a01c63574e387eaa769be769115",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/dc784032a3f6f4e7a4b882e272b771f6fe4c37cf",
+                "reference": "dc784032a3f6f4e7a4b882e272b771f6fe4c37cf",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0",
                 "psr/http-message": "~1.0",
-                "ralouphie/getallheaders": "^2.0.5"
+                "ralouphie/getallheaders": "^2.0.5 || ^3.0.0"
             },
             "provide": {
                 "psr/http-message-implementation": "1.0"
             },
             "require-dev": {
+                "ext-zlib": "*",
                 "phpunit/phpunit": "~4.8.36 || ^5.7.27 || ^6.5.8"
+            },
+            "suggest": {
+                "zendframework/zend-httphandlerrunner": "Emit PSR-7 responses"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -1574,7 +1325,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2018-12-04T20:46:45+00:00"
+            "time": "2019-06-30T00:37:05+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -2468,24 +2219,24 @@
         },
         {
             "name": "ralouphie/getallheaders",
-            "version": "2.0.5",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ralouphie/getallheaders.git",
-                "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa"
+                "reference": "120b605dfeb996808c31b6477290a714d356e822"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
-                "reference": "5601c8a83fbba7ef674a7369456d12f1e0d0eafa",
+                "url": "https://api.github.com/repos/ralouphie/getallheaders/zipball/120b605dfeb996808c31b6477290a714d356e822",
+                "reference": "120b605dfeb996808c31b6477290a714d356e822",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3"
+                "php": ">=5.6"
             },
             "require-dev": {
-                "phpunit/phpunit": "~3.7.0",
-                "satooshi/php-coveralls": ">=1.0"
+                "php-coveralls/php-coveralls": "^2.1",
+                "phpunit/phpunit": "^5 || ^6.5"
             },
             "type": "library",
             "autoload": {
@@ -2504,7 +2255,7 @@
                 }
             ],
             "description": "A polyfill for getallheaders.",
-            "time": "2016-02-11T07:05:27+00:00"
+            "time": "2019-03-08T08:55:37+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
