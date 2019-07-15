@@ -32,7 +32,32 @@ class AdminController extends AppAdminController
         foreach ($questions as $question) {
             $question_sort[$question['fan']][$question['id']] = $question;
         }
+
+        $question_model = new Test();
+        if ($question_model->load(Yii::$app->request->post())) {
+            // check if admin want to update any question
+            if ($question_model->question_id) {
+                // update question
+                $question = Test::findOne($question_model->question_id);
+                $question->savol = $question_model->savol;
+                $question->ja = $question_model->ja;
+                $question->jb = $question_model->jb;
+                $question->jc = $question_model->jc;
+                $question->jd = $question_model->jd;
+                $question->tj = $question_model->tj;
+                $question->fan = $question_model->test_id;
+                $question->save();
+                return $this->refresh();
+            } else {
+                // admin add new question
+                $question_model->fan = $question_model->test_id;
+                $question_model->save();
+            }
+            return $this->refresh();
+        }
+
         $this->layout = 'admin';
+        $this->setMeta('Tests');
         return $this->render(
             'subjects',
             [
@@ -41,6 +66,20 @@ class AdminController extends AppAdminController
             ]
         );
     }
+
+    public function actionGetQuestion() {
+        if (Yii::$app->request->isAjax) {
+            $id = Yii::$app->request->get('question_id');
+            $question = Test::find()->where(['id' => $id])->asArray()->one();
+
+            $this->layout = false;
+            $question_json = json_encode($question);
+            return $question_json;
+        } else {
+            return $this->redirect(Yii::$app->request->referrer);
+        }
+    }
+
     public function actionSubchange($id)
     {
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
@@ -74,13 +113,12 @@ class AdminController extends AppAdminController
             ]
         );
     }
-    public function actionDeltest($test_id)
+    public function actionDeltest($id)
     {
-        $model = Test::findone($test_id);
+        $model = Test::findOne($id);
         $model->delete();
         $this->layout = 'admin';
-        $session = Yii::$app->session;
-        return $this->redirect(['testplus', 'sub_id' => $session['fan']]);
+        return $this->redirect('/admin/admin/test');
     }
     public function actionChecktest($id)
     {
@@ -91,6 +129,13 @@ class AdminController extends AppAdminController
         $session = Yii::$app->session;
         return $this->redirect('index');
     }
+    public function actionDelresult() {
+        if (isset($_GET['id'])) {
+            $id = Yii::$app->request->get('id');
+        }
+        $result = Natijalar::findone($id);
+        $result->delete();
+    }
     public function actionSubdel($sub_id)
     {
         $model = Fanlar::findone($sub_id);
@@ -98,8 +143,11 @@ class AdminController extends AppAdminController
         $this->layout = 'admin';
         return $this->redirect('test');
     }
-    public function actionSubedit($sub_id)
+    public function actionSubedit()
     {
+        if (isset($_GET['sub_id'])) {
+            $sub_id = Yii::$app->request->get('sub_id');
+        }
         $model = Fanlar::findone($sub_id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
@@ -123,15 +171,24 @@ class AdminController extends AppAdminController
             ]
         );
     }
-    public function actionTestadd($sub_id)
+    public function actionTestadd()
     {
         $model = new Test();
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            $session = Yii::$app->session;
-
-            return $this->redirect(['testplus', 'sub_id' => $session['fan']]);
+        if ($model->load(Yii::$app->request->post())) {
+            if ($model->question_id) {
+                $question = Test::findOne($model->question_id);
+                $question->savol = $model->savol;
+                $question->ja = $model->ja;
+                $question->jb = $model->jb;
+                $question->jc = $model->jc;
+                $question->jd = $model->jd;
+                $question->tj = $model->tj;
+                $question->fan = $model->fan;
+                $question->save();
+            } else {
+                $model->save();
+            }
         }
-        $model->fan = $sub_id;
         $this->layout = 'admin';
         return $this->render(
             'testadd',

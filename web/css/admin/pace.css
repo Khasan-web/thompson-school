@@ -111,7 +111,6 @@
 }
 
 table {
-    table-layout: fixed ;
     width: 100%;
 }
 
@@ -131,9 +130,18 @@ table {
     padding: 50px;
 }
 
+.test-table {
+    overflow: hidden!important;
+}
 
 @media (max-width: 992px) {
     .navbar-top-links {
         display: none;
+    }
+}
+
+@media (min-width: 992px) {
+    table {
+        table-layout: fixed;
     }
 }

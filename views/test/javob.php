@@ -1,4 +1,5 @@
 <?php
+
 use app\models\Test;
 use app\models\Natijalar;
 
@@ -15,6 +16,26 @@ foreach ($data as $javob) {
     }
 }
 
+$fan = $session['fan'];
+$fan = strtolower($fan);
+$eng_lvl = '';
+
+// define eng level
+if (strpos($fan, 'placement') !== false) {
+    if ($tug >= 0 && $tug <= 15) {
+        $eng_lvl = 'Beginner';
+    } else if ($tug >= 16 && $tug <= 24) {
+        $eng_lvl = 'Elementary';
+    } else if ($tug >= 25 && $tug <= 32) {
+        $eng_lvl = 'Pre-intermediate';
+    } else if ($tug >= 33 && $tug <= 39) {
+        $eng_lvl = 'Intermediate';
+    } else if ($tug >= 40 && $tug <= 45) {
+        $eng_lvl = 'Upper Intermediate';
+    } else if ($tug >= 46 && $tug <= 50) {
+        $eng_lvl = 'Advanced';
+    }
+}
 
 $model = new Natijalar();
 $model->tugri = $tug;
@@ -30,8 +51,16 @@ $model->save();
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-10 col-10 center">
-                <h3 class="level">Your score <?= $tug?> from <?= $session['soni']?></h3>
-                <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, vero! Enim voluptatibus sunt obcaecati, aliquid, corporis unde iure eos.<br /><br />Наш менеджер скоро вам перезвонить</p><a class="back-to-main" href="index.html"><i class="fa fa-arrow-left"></i>Главная страница </a>
+                <?php if (strpos($fan, 'placement') !== false) : ?>
+                    <p class="result">Вы набрали <?= $tug ?> из <?= $session['soni'] ?></p>
+                    <h3 class="level"><?= $eng_lvl?></h3>
+                    <p class="info">Поздравляем! вы сделали первый шаг к достижению ваших целей в Thompson school 🥳</p>
+                    <p class="info">Наш менеджер скоро вам перезвонить</p>
+                    <a class="back-to-main" href="index.html"><i class="fa fa-arrow-left"></i>Главная страница </a>
+                <?php else : ?>
+                    <h3 class="level">Вы набрали <?= $tug ?> из <?= $session['soni'] ?></h3>
+                    <p class="info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, vero! Enim voluptatibus sunt obcaecati, aliquid, corporis unde iure eos.<br /><br />Наш менеджер скоро вам перезвонить</p><a class="back-to-main" href="index.html"><i class="fa fa-arrow-left"></i>Главная страница </a>
+                <?php endif; ?>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-10 col-10 graduate"><svg width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <image xlink:href="/web/img/graduate.png" height="100%" width="100%" />

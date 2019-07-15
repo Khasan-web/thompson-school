@@ -18,6 +18,9 @@ use Yii;
  */
 class Test extends \yii\db\ActiveRecord
 {
+
+    public $test_id;
+    public $question_id;
     /**
      * {@inheritdoc}
      */
@@ -36,6 +39,7 @@ class Test extends \yii\db\ActiveRecord
             [['ja', 'jb', 'jc', 'jd'], 'string', 'max' => 255],
             [['tj'], 'string', 'max' => 5],
             [['fan'], 'string', 'max' => 64],
+            [['test_id', 'question_id'], 'safe'],
         ];
     }
 

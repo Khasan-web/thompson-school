@@ -15,6 +15,7 @@ $session = Yii::$app->session;
 </style>
 <div id="test">
         <div class="container">
+            <p class="result text-center"><?= count($test)?> вопросов</p>
             <h2><?=Fanlar::findOne($sub_id)->nomi?></h2>
             <?php $session['fan'] = Fanlar::findOne($sub_id)->nomi; ?>
 
@@ -63,7 +64,7 @@ $session = Yii::$app->session;
                 var selValue = $(this).val();
 
                 $.ajax({
-                    url: '/web/test/check',
+                    url: '/test/check',
                     type: 'post',
                     data: {
                         answer: selValue , 

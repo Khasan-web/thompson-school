@@ -1,11 +1,11 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     new WOW().init();
 
-    $('#one').hover(function() {
+    $('#one').hover(function () {
         $('.rocket').toggleClass('visible', 'unvisible')
     })
-    $('#two').hover(function() {
+    $('#two').hover(function () {
         $('.ielts').toggleClass('visible', 'unvisible')
     })
 
@@ -54,11 +54,11 @@ $(document).ready(function() {
     });
 
 
-    $('input').focus(function() {
+    $('input').focus(function () {
         $(this).parents('.form-group').addClass('focused');
     });
 
-    $('input').blur(function() {
+    $('input').blur(function () {
         var inputValue = $(this).val();
         if (inputValue == "") {
             $(this).removeClass('filled');
@@ -75,9 +75,9 @@ $(document).ready(function() {
         lessLink: '<a href="#" class="learn-less">Learn more <span><img src="src/img/icons/test-chevron-up.png"></span></a>'
     });
 
-    $('form').on('submit', function() {
+    $('form').on('submit', function () {
         var valid = true;
-        $(this).find('input').each(function(i) {
+        $(this).find('input').each(function (i) {
             if (!$(this).val()) {
                 $(this).focus();
                 valid = false;
@@ -85,6 +85,16 @@ $(document).ready(function() {
             }
         });
         return valid;
+    });
+
+
+    // play video
+    $('.video-button').click(function () {
+        $('#thompson-video').get(0).play();
+    });
+
+    $('#video-modal').on('hidden.bs.modal', function () {
+        $('#thompson-video').get(0).pause();
     });
 
 })

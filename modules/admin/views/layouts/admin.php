@@ -58,10 +58,7 @@ AdminAsset::register($this);
                     <li class="user-panel">
                         <div class="thumb"><img src="/web/img/avatar.jpg" alt="" class="img-circle" /></div>
                         <div class="info">
-                            <p><?= $user->username ?></p>
                             <ul class="list-inline list-unstyled">
-                                <li><a href="<?= Url::to(['profile']) ?>"><i class="fa fa-user"></i></a></li>
-                                <li><a target="_blank" href="https://mail.google.com/" data-hover="tooltip" title="Mail"><i class="fa fa-envelope"></i></a></li>
                                 <li><a href="<?= Url::to(['/site/index']) ?>" data-hover="tooltip"><i class="fa fa-home"></i></a></li>
                                 <li><a href="<?= Url::to(['/site/logout']) ?>" data-hover="tooltip" title="Logout"><i class="fa fa-sign-out"></i></a></li>
                             </ul>

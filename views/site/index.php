@@ -356,7 +356,7 @@ use yii\helpers\Html;
     </div>
 </section>
 <!-- Contact-->
-<section id="contact">
+<section id="contact" class="red-form">
     <div class="container">
         <h1> <span>Наши контакты </span>и форма <br class="hide-on-mob" />обратной связи</h1>
         <div class="row center">

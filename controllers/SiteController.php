@@ -33,7 +33,7 @@ class SiteController extends AppController
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'logout' => ['post'],
+                    'logout' => ['post', 'get'],
                 ],
             ],
         ];
@@ -99,6 +99,8 @@ class SiteController extends AppController
         }
 
         $model->password = '';
+
+        $this->layout = 'test';
         return $this->render('login', [
             'model' => $model,
         ]);

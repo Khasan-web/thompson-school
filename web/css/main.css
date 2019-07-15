@@ -38,9 +38,6 @@ input {
     .md {
         display: none;
     }
-    #contact .form .form-group {
-        padding-right: 30px;
-    }
 
     .tests-info {
         padding-left: 45px;
@@ -1774,7 +1771,7 @@ html {
     font-size: 14px;
 }
 
-#contact .form input,
+.red-form .form input,
 #target .right .form-group input {
     background: 0 0;
     border: 0;
@@ -1938,38 +1935,38 @@ html {
 
 
 
-#contact .form .form-row {
+.red-form .form .form-row {
     margin-top: -30px;
     margin-right: 0;
 }
 
-#contact .form label {
+.red-form .form label {
     color: rgba(0, 0, 0, .5);
     font-size: 14px;
 }
 
-#contact .form input {
+.red-form .form input {
     border-bottom: 1.5px solid #a61d31;
 }
 
-#contact .form .form-input {
+.red-form .form .form-input {
     margin: 20px 0;
 }
 
-#contact .form .form-label {
+.red-form .form .form-label {
     left: 0;
 }
 
-#contact .form .col-md-6 .form-label {
+.red-form .form .col-md-6 .form-label {
     top: 30px;
     left: 5px;
 }
 
-#contact .form #message {
+.red-form .form #message {
     margin-top: 60px;
 }
 
-#contact .form .for-btn {
+.red-form .form .for-btn {
     -webkit-box-pack: center;
     -webkit-justify-content: center;
     -ms-flex-pack: center;
@@ -1980,14 +1977,14 @@ html {
     display: flex;
 }
 
-#contact .form .for-btn a.btn,
-#contact .form .for-btn a.btn:hover {
+.red-form .form .for-btn .btn,
+.red-form .form .for-btn .btn:hover {
     -webkit-transition: .3s ease;
     -o-transition: .3s ease;
     transition: .3s ease;
 }
 
-#contact .form .for-btn a.btn {
+.red-form .form .for-btn .btn {
     background: #a61d31;
     color: #fff;
     padding: 7px 60px;
@@ -1998,12 +1995,16 @@ html {
     margin-top: 20px;
 }
 
-#contact .form .for-btn a.btn:hover {
+.field-loginform-rememberme {
+    padding: 10px 0!important;
+}
+
+.red-form .form .for-btn .btn:hover {
     background: #8b192a;
 }
 
 @media screen and (max-width:576px) {
-    #contact .form {
+    .red-form .form {
         margin-top: 30px;
     }
 }
@@ -2172,6 +2173,24 @@ nav {
 
 .help-block {
     display: none!important;
+}
+
+.site-login .form {
+    display: flex;
+    align-items: center;
+    height: 90vh;
+}
+
+.card-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.result {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 21px;
+    color: #bdbdbd;
 }
 
 @media (max-width: 768px) {

@@ -10,19 +10,25 @@ use app\controllers\UploadedFile;
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="products-form" style="padding: 15px;">
+<div class="products-form page-content" style="padding: 15px;">
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div class="panel panel-red">
+        <div class="panel-heading"><?= Yii::$app->controller->action->id == 'addsub' ? 'Add' : 'Edit'?> test</div>
+        <div class="panel-body">
+            <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nomi')->textInput(['maxlength' => true]) ?>
+            <?= $form->field($model, 'nomi')->textInput(['maxlength' => true])->label('Name') ?>
 
-    <?= $form->field($model, 'tuliq')->textarea(['maxlength' => true]) ?>
-        <?= $form->field($model, 'rasmi')->fileInput()  ?>
+            <?= $form->field($model, 'tuliq')->textarea(['maxlength' => true])->label('Description') ?>
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            <?= $form->field($model, 'rasmi')->fileInput()->label('Image')  ?>
+
+            <div class="form-group">
+                <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+            </div>
+
+            <?php ActiveForm::end(); ?>
+        </div>
     </div>
-
-    <?php ActiveForm::end(); ?>
 
 </div>

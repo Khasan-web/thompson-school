@@ -22,7 +22,7 @@ AppAsset::register($this);
   <meta name="author" content="Thompson school" />
   <meta name="keywords" content="курсы английского языка IELTS математика быстрый английский иностранные языки математика для поступления в вузы томпсон скул английский для детей детский английский English courses IELTS mathematics fast english foreign languages mathematics for entry to higher education Thomson schools english for children children english">
   <meta name="description" content="Thompson school - английский, которого вы заслуживаете и многое другое! 🚀✅" />
-  <link rel="icon" href="/web/img/icons/favicon.png" />
+  <link rel="icon" href="/web/img/icons/favicon.ico" />
   <link rel="stylesheet" href="/web/css/libs.min.css" />
   <link rel="stylesheet" href="/web/css/main.css" />
   <link rel="stylesheet" href="/web/css/circles.css" />
@@ -42,7 +42,7 @@ AppAsset::register($this);
   <div id="header">
     <div class="container pr-0">
       <!-- Navbar-->
-      <nav class="navbar navbar-expand-lg pr-0 pl-0"><a class="navbar-brand lg" href="/"><img src="/web/img/logo-navbar.png" /></a><a class="navbar-brand md" href="/"><img src="/web/img/logo-navbar-sm.png" /></a>
+      <nav class="navbar navbar-expand-lg pr-0 pl-0"><a class="navbar-brand lg" href="/"><img src="/web/img/logo-nav.svg" style="width: 200px"/></a><a class="navbar-brand md" href="/"><img src="/web/img/logo-nav-sm.svg" style="width: 150px"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fa fa-bars"></i></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto ml-auto">

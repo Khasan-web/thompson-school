@@ -315,11 +315,11 @@ html {
 }
 
 #test {
+    margin-top: 100px;
     margin-bottom: 138px;
 }
 
 #test h2 {
-    margin-top: 100px;
     margin-bottom: 33px;
     font-size: 48px;
     text-align: center;

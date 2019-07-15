@@ -346,8 +346,34 @@ $(function () {
     $('body').on('click', '.view-info', function () {
         var test = $(this).data('id');
         $('.test-table').hide();
-        $('#'+test).show();
+        $('#' + test).show();
         return false;
+    });
+
+    $(document).on('click', '.edit-question', function () {
+        var id = $(this).data('id'),
+            question_obj = {},
+            button = $(this);
+        $('#test-question_id').val(id);
+        $.ajax({
+            url: '/admin/admin/get-question',
+            type: 'GET',
+            data: {question_id: id}
+        }).done(function(data) {
+            console.log(data);
+            question_obj = JSON.parse(data);
+            // change values of inputs
+            var form = $(button).parents().find('.test-table form');
+            console.log(form);
+            $(form).find('#test-savol').val(question_obj.savol);
+            $(form).find('#test-ja').val(question_obj.ja);
+            $(form).find('#test-jb').val(question_obj.jb);
+            $(form).find('#test-jc').val(question_obj.jc);
+            $(form).find('#test-jd').val(question_obj.jd);
+            $(form).find('#test-tj').val(question_obj.tj);
+            $(form).find('#test-fan').val(question_obj.fan);
+            $(form).find('#test-question_id').val(question_obj.id);
+        });
     });
 
 });

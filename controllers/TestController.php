@@ -36,7 +36,7 @@ class TestController extends AppController
         $this->layout = 'test';
         $session = Yii::$app->session;
         $session->remove('test');
-        $test = Test::find()->where(['fan'=>$sub_id])->orderBy(new Expression('rand()'))->all();
+        $test = Test::find()->where(['fan'=>$sub_id])->all();
         $fan = Fanlar::findOne($sub_id);
         $session['soni'] = count($test);
         $this->setMeta($fan->nomi . ' 😀👌✅', 'img/site-img.jpg');

@@ -22,7 +22,7 @@ AppAsset::register($this);
   <meta name="author" content="Thompson school" />
   <meta name="keywords" content="курсы английского языка IELTS математика быстрый английский иностранные языки математика для поступления в вузы томпсон скул английский для детей детский английский English courses IELTS mathematics fast english foreign languages mathematics for entry to higher education Thomson schools english for children children english">
   <meta name="description" content="Thompson school - английский, которого вы заслуживаете и многое другое! 🚀✅" />
-  <link rel="icon" href="/web/img/icons/favicon.png" />
+  <link rel="icon" href="/web/img/icons/favicon.ico" />
   <link rel="stylesheet" href="/web/css/libs.min.css" />
   <link rel="stylesheet" href="/web/css/main.css" />
   <link rel="stylesheet" href="/web/css/circles.css" />
@@ -35,13 +35,13 @@ AppAsset::register($this);
 <body>
   <?php $this->beginBody() ?>
   <!-- Main Section-->
-  <section id="main">
+  <section id="main" style="background-position: center;">
     <div class="home-bg"></div>
     <!-- Header-->
     <div id="header">
       <div class="container nav-container pr-0">
         <!-- Navbar-->
-        <nav class="navbar navbar-expand-lg pr-0 pl-0"><a class="navbar-brand lg" href="/"><img src="/web/img/logo-navbar.png" /></a><a class="navbar-brand md" href="/"><img src="/web/img/logo-navbar-sm.png" /></a>
+        <nav class="navbar navbar-expand-lg pr-0 pl-0"><a class="navbar-brand lg" href="/"><img src="/web/img/logo-nav.svg" style="width: 200px"/></a><a class="navbar-brand md" href="/"><img src="/web/img/logo-nav-sm.svg" style="width: 150px"/></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fa fa-bars"></i></span></button>
           <div class="nav-contact">
             <p>+998 (78) 122 10 10</p><span class="lg"><img src="/web/img/icons/nav-call.png" /></span><span class="md"><img src="/web/img/icons/nav-call-red.png" /></span><a href="#" data-toggle="modal" data-target="#order-call">заказать звонок</a>
@@ -120,7 +120,7 @@ AppAsset::register($this);
               <li><span><img src="/web/img/icons/bullets-1.png" /></span>Новейшие методы обучения</li>
               <li><span><img src="/web/img/icons/bullets-2.png" /></span>Подход к каждому ученику</li>
               <li><span><img src="/web/img/icons/bullets-3.png" /></span>Высочайший результат</li>
-            </ul><a class="test-button btn" href="#target">Подобрать курс!</a><br /><a class="link-to-lang" href="/web/talabalar/testreg?lang=other">Не английский?</a>
+            </ul><a class="test-button btn" href="#target">Подобрать курс!</a><br />
             <div class="tip-first">
               <div class="row">
                 <div><img src="/web/img/icons/arrow-up.png" /></div>
@@ -154,10 +154,10 @@ AppAsset::register($this);
   </section>
   <!-- Modal-for-video			-->
   <div class="modal fade" id="video-modal" tabindex="1" role="dialog" aria-labelledby="video-modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80vw">
       <div class="modal-content" style="background: transparent; border: none">
         <div class="modal-body">
-          <video class="w-100" controls="controls">
+          <video class="w-100" id="thompson-video" controls="controls">
             <!-- Put video into video folder-->
             <source src="/web/video/thompson.mp4" type="video/mp4" />Your browser does not support the video tag.
           </video>

@@ -1,3 +1,9 @@
+<?php
+
+use app\modules\admin\models\Test;
+
+?>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <div class="user-data m-b-30 page-content">
@@ -54,7 +60,7 @@
                                 </td>
                                 <td class="text-center">
                                     <span class="more">
-                                        <a href="subdel?sub_id=<?= $t->id ?>"><span class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>&nbsp;Delete</span></a>
+                                        <a onclick="return confirm('Do you want to delete this test?')" href="subdel?sub_id=<?= $t->id ?>"><span class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>&nbsp;Delete</span></a>
                                     </span>
                                     <span class="more">
                                         <a href="subedit?sub_id=<?= $t->id ?>"><span class="btn btn-default btn-xs"><i class="fa fa-edit"></i>&nbsp;Edit</span></a>
@@ -69,10 +75,13 @@
                     </tbody>
                 </table>
             </div>
-            <a href="/web/admin/addsub" class="btn btn-primary ">New Test </a>
+            <a href="/admin/admin/addsub" class="btn btn-primary ">New Test </a>
             <hr>
-            <?php foreach ($question_sort as $questions) :?>
-                <div class="table-responsive test-table" style="display: none" id="<?= end($questions)['fan']?>">
+            <?php
+            $qurstion_qty = 0;
+            foreach ($question_sort as $questions) :
+                $qurstion_qty = count($questions) ?>
+                <div class="table-responsive test-table" style="display: none;" id="<?= end($questions)['fan'] ?>">
                     <table class="table table-hover table-bordered" style="table-layout: auto">
                         <thead>
                             <tr>
@@ -109,13 +118,10 @@
                                     </td>
                                     <td class="text-center">
                                         <span class="more">
-                                            <a href="subdel?sub_id=<?= $t->id ?>"><span class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>&nbsp;Delete</span></a>
+                                            <a href="deltest?id=<?= $question['id'] ?>"><span class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i>&nbsp;Delete</span></a>
                                         </span>
-                                        <span class="more">
-                                            <a href="subedit?sub_id=<?= $t->id ?>"><span class="btn btn-default btn-xs"><i class="fa fa-edit"></i>&nbsp;Edit</span></a>
-                                        </span>
-                                        <span class="more">
-                                            <a href="testplus?sub_id=<?= $t->id ?>" data-id="<?= $t->id ?>"><span class="btn btn-info btn-xs"><i class="fa fa-eye"></i>&nbsp;View</span></a>
+                                        <span class="more edit-question" data-id="<?= $question['id'] ?>">
+                                            <a href="#question_form"><span class="btn btn-default btn-xs"><i class="fa fa-edit"></i>&nbsp;Edit</span></a>
                                         </span>
                                     </td>
                                 </tr>
@@ -123,11 +129,28 @@
                             endforeach; ?>
                         </tbody>
                     </table>
+                    <?php foreach ($model as $t) : ?>
+                        <?php
+                        if ($t['id'] == $question['fan']) {
+                            echo $this->render('testadd', [
+                                'test_id' => $t['id'],
+                                'model' => new Test(),
+                            ]);
+                        }
+                        ?>
+                    <?php endforeach; ?>
                 </div>
             <?php endforeach; ?>
+            <?php
+            if ($qurstion_qty <= 0) {
+                echo $this->render('testadd', [
+                    'test_id' => $t['id'],
+                    'model' => new Test(),
+                ]);
+            }
+            ?>
         </div>
     </div>
-
 
     <script>
         function getval(sel) {

@@ -13,15 +13,14 @@
         <div class="row" style="margin: 100px 0;">
             <div class="col-lg-12 col-md-12 mb-5 tests-info">
                 <h1 class="text-left m-0">Выбери интересующее<br /><span>направление</span></h1> <br>
-                <div class="col-md-6 p-0">
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, totam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe repellendus ea impedit, quaerat architecto dolores ducimus eos aut itaque voluptatum?</p>
-                </div>
             </div>
             <?php $i = 0;
             foreach ($model as $fan) : ?>
 
                 <div class="test-cards-item col-lg-4 col-md-5 col-12 mb-5">
-                    <img src="<?= $fan->rasmi ?>" />
+                    <div class="card-image">
+                        <img src="<?= $fan->rasmi ?>" />
+                    </div>
                     <div class="for-text">
                         <h4><?= $fan->nomi ?></h4>
                         <article data-readmore class="content" aria-expanded="false">
