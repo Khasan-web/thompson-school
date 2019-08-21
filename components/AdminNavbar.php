@@ -13,6 +13,7 @@ class AdminNavbar extends widget {
     public $tests;
     public $questions;
     public $students;
+    public $calls;
 
     public function init() {
         parent::init();
@@ -21,13 +22,11 @@ class AdminNavbar extends widget {
     public function run() {
         $action = Yii::$app->controller->action->id;
         if ($action == 'index') {
-            $this->subjects = 'active';
-        } else if ($action == 'test') {
             $this->tests = 'active';
-        } else if ($action == 'category') {
+        } else if ($action == 'test' || $action == 'addsub' || $action == 'subedit') {
             $this->questions = 'active';
-        } else if ($action == 'order') {
-            $this->students = 'active';
+        } else if ($action == 'calls') {
+            $this->calls = 'active';
         }
         $html = include __DIR__ . '/adminNavbar/adminNavbarHtml.php';
         return $this->html;

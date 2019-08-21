@@ -10,6 +10,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Talabalar;
+use app\modules\admin\models\CallRequest;
 
 class SiteController extends AppController
 {
@@ -47,6 +48,7 @@ class SiteController extends AppController
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+                'layout' => 'test'
             ],
             'captcha' => [
                 'class' => 'yii\captcha\CaptchaAction',
@@ -64,6 +66,12 @@ class SiteController extends AppController
     {
         $model = new Talabalar();
         $session = Yii::$app->session;
+        $calls_model = new CallRequest();
+
+        if ($calls_model->load(Yii::$app->request->post())) {
+            $calls_model->date_request = date('Y-m-d H:i:s');
+            $calls_model->save();
+        }
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $session = Yii::$app->session;
@@ -90,12 +98,12 @@ class SiteController extends AppController
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
-            return $this->goHome();
+            return $this->redirect(['/admin/index']);
         }
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->redirect(['/admin/index']);
         }
 
         $model->password = '';
@@ -134,6 +142,10 @@ class SiteController extends AppController
         return $this->render('contact', [
             'model' => $model,
         ]);
+    }
+
+    public function actionWheel() {
+        return $this->render('wheel');
     }
 
     /**

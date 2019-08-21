@@ -350,14 +350,14 @@ footer {
     margin-bottom: 30px;
 }
 
-#main .back-to-main {
+.back-to-main {
     font-size: 14px;
     line-height: 25px;
     font-weight: 500;
     color: #a61d31;
 }
 
-#main .back-to-main .fa {
+.back-to-main .fa {
     margin-right: 17px;
     color: #a61d31;
 }

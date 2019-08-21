@@ -10,9 +10,9 @@
 </style>
 <section id="test-cards" class="pt-0">
     <div class="container">
-        <div class="row" style="margin: 100px 0;">
+        <div class="row" style="margin: 150px 0;">
             <div class="col-lg-12 col-md-12 mb-5 tests-info">
-                <h1 class="text-left m-0">Выбери интересующее<br /><span>направление</span></h1> <br>
+                <h1 class="text-left m-0"><?= Yii::t('app', 'Выберите интересующее <br /><span>направление</span>')?></h1> <br>
             </div>
             <?php $i = 0;
             foreach ($model as $fan) : ?>
@@ -23,12 +23,12 @@
                     </div>
                     <div class="for-text">
                         <h4><?= $fan->nomi ?></h4>
-                        <article data-readmore class="content" aria-expanded="false">
+                        <article data-readmore class="content" aria-expanded="false" style="line-height: 1.65;">
                             <?= $fan->tuliq ?>
                         </article>
                     </div>
                     <div class="for-buttons">
-                        <a href="/test/begin?sub_id=<?= $fan->id ?>" class="btn">Start test</a>
+                        <a href="/test/begin?sub_id=<?= $fan->id ?>" class="btn"><?= Yii::t('app', 'Начать тест')?></a>
                     </div>
                 </div>
 

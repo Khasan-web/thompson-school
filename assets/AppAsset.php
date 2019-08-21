@@ -28,11 +28,13 @@ class AppAsset extends AssetBundle
         'css/test-cards.css',
         'css/congrat.css',
         'css/font.css',
-        'css/test.css'
+        'css/test.css',
+        'css/animate.css',
     ];
     public $js = [
         'js/libs.min.js',
         'js/main.js',
+        'js/wow.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

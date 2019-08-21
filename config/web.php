@@ -17,6 +17,19 @@ $config = [
         ],
     ],
     'components' => [
+        'i18n' => [
+            'translations' => [
+                'app*' => [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    //'basePath' => '@app/messages',
+                    'sourceLanguage' => 'ru',
+                    'fileMap' => [
+                        'app' => 'app.php',
+                        'app/error' => 'error.php',
+                    ],
+                ],
+            ],
+        ],
         'user' => [
             'class' => 'webvimark\modules\UserManagement\components\UserConfig',
     
@@ -59,10 +72,13 @@ $config = [
         'db' => $db,
         
         'urlManager' => [
+            'class' => 'codemix\localeurls\UrlManager',
+            'languages' => ['en', 'ru', 'uz'],
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
                 'web/test/<id:\d+>' => 'test/begin',
+                'admin/<action:\w+>' => 'admin/admin/<action>',
             ],
         ],
         

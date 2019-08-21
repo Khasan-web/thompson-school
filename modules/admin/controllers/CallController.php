@@ -1,27 +1,25 @@
 <?php
 
-namespace app\controllers;
+namespace app\modules\admin\controllers;
 
 use Yii;
-use app\models\Talabalar;
-use app\models\Fanlar;
-use app\models\TalabalarSearch;
+use app\modules\admin\models\CallRequest;
+use app\modules\admin\models\CallRequestSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\modules\admin\models\CallRequest;
 
 /**
- * TalabalarController implements the CRUD actions for Talabalar model.
+ * CallController implements the CRUD actions for CallRequest model.
  */
-class TalabalarController extends AppController
+class CallController extends Controller
 {
     /**
      * {@inheritdoc}
      */
+    public $layout = 'admin';
     public function behaviors()
     {
-
         return [
             'verbs' => [
                 'class' => VerbFilter::className(),
@@ -33,13 +31,12 @@ class TalabalarController extends AppController
     }
 
     /**
-     * Lists all Talabalar models.
+     * Lists all CallRequest models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $this->layout = 'test';
-        $searchModel = new TalabalarSearch();
+        $searchModel = new CallRequestSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -47,26 +44,9 @@ class TalabalarController extends AppController
             'dataProvider' => $dataProvider,
         ]);
     }
-     
-    public function actionSelsub()
-    {
-        $calls_model = new CallRequest();
-
-        if ($calls_model->load(Yii::$app->request->post())) {
-            $calls_model->date_request = date('Y-m-d H:i:s');
-            $calls_model->save();
-        }
-
-        $this->layout = 'test';
-        $model = Fanlar::find()->where(['status'=>1])->all();
-        $this->setMeta('Our Tests 📑✅', 'img/site-img.jpg');
-        return $this->render('selsub', [
-            'model' => $model
-        ]);
-    }
 
     /**
-     * Displays a single Talabalar model.
+     * Displays a single CallRequest model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -79,13 +59,13 @@ class TalabalarController extends AppController
     }
 
     /**
-     * Creates a new Talabalar model.
+     * Creates a new CallRequest model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Talabalar();
+        $model = new CallRequest();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -95,34 +75,9 @@ class TalabalarController extends AppController
             'model' => $model,
         ]);
     }
-    // public function actionTestreg($lang)
-    // {
-    //     $this->layout = 'test';
-    //     $model = new Talabalar();
-    //     $session = Yii::$app->session;
-    //     $session['lang'] = $lang;
-
-    //     if ($model->load(Yii::$app->request->post()) && $model->save()) {
-    //         $session = Yii::$app->session;
-    //         $session['fio'] = $_POST['Talabalar']['fio'];
-    //         $session['mail'] = $_POST['Talabalar']['pochta'];
-    //         $session['tel'] = $_POST['Talabalar']['tel'];
-    //         if ($session['lang'] == 'en'){
-    //             return $this->redirect('/web/test/begin?sub_id=1');
-    //         }else{
-    //             return $this->redirect('selsub');
-    //         }
-            
-    //     }
-
-    //     return $this->render('testreg', [
-    //         'model' => $model,
-    //     ]);
-    // }
-
 
     /**
-     * Updates an existing Talabalar model.
+     * Updates an existing CallRequest model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -142,7 +97,7 @@ class TalabalarController extends AppController
     }
 
     /**
-     * Deletes an existing Talabalar model.
+     * Deletes an existing CallRequest model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -156,18 +111,18 @@ class TalabalarController extends AppController
     }
 
     /**
-     * Finds the Talabalar model based on its primary key value.
+     * Finds the CallRequest model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Talabalar the loaded model
+     * @return CallRequest the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Talabalar::findOne($id)) !== null) {
+        if (($model = CallRequest::findOne($id)) !== null) {
             return $model;
         }
 
-        throw new NotFoundHttpException('The requested page does not exist.');
+        throw new NotFoundHttpException(Yii::t('app', 'The requested page does not exist.'));
     }
 }

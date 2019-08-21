@@ -8,6 +8,7 @@ use app\modules\admin\models\Fanlar;
 use yii;
 use yii\web\UploadedFile;
 use yii\helpers\Url;
+use app\modules\admin\models\User;
 
 class AdminController extends AppAdminController
 {
@@ -17,6 +18,7 @@ class AdminController extends AppAdminController
         Yii::$app->view->title = '';
         $model = Natijalar::find()->all();
         $this->layout = 'admin';
+        $this->setMeta('Thompson school');
         return $this->render(
             'index',
             [
@@ -145,6 +147,7 @@ class AdminController extends AppAdminController
     }
     public function actionSubedit()
     {
+        $this->setMeta('Edit the test');
         if (isset($_GET['sub_id'])) {
             $sub_id = Yii::$app->request->get('sub_id');
         }
@@ -215,6 +218,7 @@ class AdminController extends AppAdminController
     }
     public function actionAddsub()
     {
+        $this->setMeta('Add a test');
         $model = new Fanlar();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
 
@@ -238,4 +242,20 @@ class AdminController extends AppAdminController
             ]
         );
     }
+
+
+    public function actionAuth() {
+        $this->setMeta('Change auth');
+        $model = User::find()->one();
+        if ($model->load(Yii::$app->request->post())) {
+            $password = Yii::$app->security->generatePasswordHash($model->password);
+            $model->username = $model->username;
+            $model->password = $password;
+            $model->save();
+            return $this->redirect(['admin/index']);
+        }
+        $this->layout = 'admin';
+        return $this->render('auth', compact('model'));
+    }
+
 }

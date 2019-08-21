@@ -15,7 +15,7 @@ $session = Yii::$app->session;
 </style>
 <div id="test">
         <div class="container">
-            <p class="result text-center"><?= count($test)?> вопросов</p>
+            <p class="result text-center"><?= count($test)?> <?= Yii::t('app', 'вопросов')?></p>
             <h2><?=Fanlar::findOne($sub_id)->nomi?></h2>
             <?php $session['fan'] = Fanlar::findOne($sub_id)->nomi; ?>
 
@@ -52,7 +52,7 @@ $session = Yii::$app->session;
         <hr>
             <?php $i++; endforeach;?>
             <div id="result"></div>
-            <a class="get-result btn" href="/test/end">Get my result!</a>
+            <a class="get-result btn" href="/test/end"><?= Yii::t('app', 'Узнать результат!')?></a>
             <br>
             <br>
         </div>

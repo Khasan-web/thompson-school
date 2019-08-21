@@ -3,13 +3,13 @@
         <div class="panel-heading">Results</div>
         <div class="panel-body">
             <div class="table-responsive">
-                <table class="table table-data2">
+                <table class="table table-data2 table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>№</th>
                             <th>Name</th>
                             <th>Phone</th>
-                            <th>date</th>
+                            <th>Date</th>
                             <th>Subjects</th>
                             <th>True</th>
                             <th>Flase</th>

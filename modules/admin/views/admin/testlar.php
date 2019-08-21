@@ -1,7 +1,7 @@
 <div class="user-data m-b-30">
     <h3 class="title-3 m-b-30">
         <i class="zmdi zmdi-account-calendar"></i>Subjects</h3>
-    <div class="container" style="    text-align: right;">
+    <div class="container" style="text-align: right;">
         <a href="/web/admin/testadd?sub_id=<?= $sub_id ?>" class="btn btn-primary">+ Test</a>
     </div>
 

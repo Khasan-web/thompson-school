@@ -11,6 +11,7 @@ use yii\filters\VerbFilter;
 use yii\web\Response;
 use app\models\Test;
 use yii\db\Expression;
+use app\models\CallRequest;
 /**
  * TestController implements the CRUD actions for Test model.
  */
@@ -33,6 +34,13 @@ class TestController extends AppController
     }
     public function actionBegin($sub_id)
     {
+        $calls_model = new CallRequest();
+
+        if ($calls_model->load(Yii::$app->request->post())) {
+            $calls_model->date_request = date('Y-m-d H:i:s');
+            $calls_model->save();
+        }
+
         $this->layout = 'test';
         $session = Yii::$app->session;
         $session->remove('test');
@@ -97,8 +105,15 @@ class TestController extends AppController
     }    
     public function actionEnd()
     {   
+        $calls_model = new CallRequest();
+
+        if ($calls_model->load(Yii::$app->request->post())) {
+            $calls_model->date_request = date('Y-m-d H:i:s');
+            $calls_model->save();
+        }
+
         $this->layout = 'test';
-        $this->setMeta($fan->nomi . ' Congratulation 👏👏👏', 'img/site-img.jpg');
+        $this->setMeta('Congratulation 👏👏👏', 'img/site-img.jpg');
         return $this->render('javob');
     }    
     public function actionTestasl()

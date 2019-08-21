@@ -44,7 +44,7 @@ AdminAsset::register($this);
         <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" data-intro="&lt;b&gt;Topbar&lt;/b&gt; has other styles with live demo. Go to &lt;b&gt;Layouts-&gt;Header&amp;Topbar&lt;/b&gt; and check it out." class="navbar navbar-default navbar-static-top">
             <div class="navbar-header">
                 <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-                <a id="logo" href="<?= Url::to(['/admin']) ?>" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">Thompson school</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
+                <a id="logo" href="<?= Url::to(['/admin/index']) ?>" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">Thompson school</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
             <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
             </div>
         </nav>
@@ -58,9 +58,11 @@ AdminAsset::register($this);
                     <li class="user-panel">
                         <div class="thumb"><img src="/web/img/avatar.jpg" alt="" class="img-circle" /></div>
                         <div class="info">
+                            <p>Admin Panel</p>
                             <ul class="list-inline list-unstyled">
                                 <li><a href="<?= Url::to(['/site/index']) ?>" data-hover="tooltip"><i class="fa fa-home"></i></a></li>
                                 <li><a href="<?= Url::to(['/site/logout']) ?>" data-hover="tooltip" title="Logout"><i class="fa fa-sign-out"></i></a></li>
+                                <li><a href="<?= Url::to(['/admin/auth']) ?>" data-hover="tooltip"><i class="fa fa-lock"></i></a></li>
                             </ul>
                         </div>
                         <div class="clearfix"></div>
