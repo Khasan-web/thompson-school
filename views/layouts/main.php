@@ -45,7 +45,7 @@ AppAsset::register($this);
 
   <!-- Modal-for-video			-->
   <div class="modal fade" id="video-modal" tabindex="1" role="dialog" aria-labelledby="video-modal-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 80vw">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="mix-width: 80vw">
       <div class="modal-content" style="background: transparent; border: none">
         <div class="modal-body">
           <video class="w-100" id="thompson-video" controls="controls">
@@ -179,7 +179,7 @@ AppAsset::register($this);
             </div>
           </div>
           <!-- Circles and video-sm-->
-          <div class="col-md-4 col-sm-10 video-sm d-none">
+          <div class="col-lg-4 col-md-12 video-sm d-none">
             <div class="circle-wrapper header-circle">
               <div class="circle circle-1">
                 <div class="circle circle-2">

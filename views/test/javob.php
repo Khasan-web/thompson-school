@@ -3,18 +3,7 @@
 use app\models\Test;
 use app\models\Natijalar;
 
-$session = Yii::$app->session;
-$data = $session['javoblar'];
-$tug = 0;
-$xato = 0;
-
-foreach ($data as $javob) {
-    if ($javob['javob'] == Test::findOne($javob['test_id'])->tj) {
-        $tug++;
-    } else {
-        $xato++;
-    }
-}
+$tug = $session['true'];
 
 $fan = $session['fan'];
 $fan = strtolower($fan);
@@ -37,14 +26,6 @@ if (strpos($fan, 'placement') !== false) {
     }
 }
 
-$model = new Natijalar();
-$model->tugri = $tug;
-$model->xato = $xato;
-$model->fio = $session['fio'];
-$model->pochta = $session['mail'];
-$model->telefon = $session['tel'];
-$model->fan = $session['fan'];
-$model->save();
 ?>
 
 <section id="main" style="margin: 150px 0; background: #fff!important">
@@ -54,14 +35,14 @@ $model->save();
                 <?php if (strpos($fan, 'placement') !== false) : ?>
                     <p class="result"><?= Yii::t('app', 'Ваш результат')?>: <?= $tug ?> / <?= $session['soni'] ?></p>
                     <h3 class="level"><?= $eng_lvl ?></h3>
-                    <p class="info"><?= Yii::t('app', 'Поздравляем! вы сделали первый шаг к достижению ваших целей в Thompson school')?> </p>
+                    <p class="info"><?= Yii::t('app', 'Поздравляем! Вы сделали первый шаг к достижению ваших целей в Thompson school.')?> </p>
                     <p class="info"><?= Yii::t('app', 'Наш менеджер скоро вам перезвонить')?></p>
-                    <a class="back-to-main" href="index.html"><i class="fa fa-arrow-left"></i><?= Yii::t('app', 'Главная страница')?> </a>
+                    <a class="back-to-main" href="/"><i class="fa fa-arrow-left"></i><?= Yii::t('app', 'Главная страница')?> </a>
                 <?php else : ?>
                     <h3 class="level"><?= Yii::t('app', 'Ваш результат')?> <?= $tug ?> / <?= $session['soni'] ?></h3>
-                    <p class="info"><?= Yii::t('app', 'Поздравляем! вы сделали первый шаг к достижению ваших целей в Thompson school')?></p>
+                    <p class="info"><?= Yii::t('app', 'Поздравляем! Вы сделали первый шаг к достижению ваших целей в Thompson school.')?></p>
                     <p class="info"><?= Yii::t('app', 'Наш менеджер скоро вам перезвонить')?></p>
-                    <a class="back-to-main" href="index.html"><i class="fa fa-arrow-left"></i><?= Yii::t('app', 'Главная страница')?> </a>
+                    <a class="back-to-main" href="/"><i class="fa fa-arrow-left"></i><?= Yii::t('app', 'Главная страница')?> </a>
                 <?php endif; ?>
             </div>
             <div class="col-lg-6 col-md-6 col-sm-10 col-10 graduate">

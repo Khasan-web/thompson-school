@@ -67,6 +67,7 @@ class SiteController extends AppController
         $model = new Talabalar();
         $session = Yii::$app->session;
         $calls_model = new CallRequest();
+        $contact_model = new ContactForm();
 
         if ($calls_model->load(Yii::$app->request->post())) {
             $calls_model->date_request = date('Y-m-d H:i:s');
@@ -76,13 +77,17 @@ class SiteController extends AppController
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             $session = Yii::$app->session;
             $session['fio'] = $_POST['Talabalar']['fio'];
-            $session['mail'] = $_POST['Talabalar']['pochta'];
             $session['tel'] = $_POST['Talabalar']['tel'];
             return $this->redirect(['talabalar/selsub']);
         }
 
+        if ($contact_model->load(Yii::$app->request->post())) {
+            $contact_model->contact($contact_model->email);
+            return $this->refresh();
+        }
+
         $this->setMeta('Thompson school 😀📕', 'img/site-img.jpg');
-        return $this->render('index', compact('model'));
+        return $this->render('index', compact('model', 'contact_model'));
     }
     public function actionCourse()
     {

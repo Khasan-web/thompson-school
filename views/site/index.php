@@ -132,6 +132,23 @@ use yii\helpers\Html;
             </div>
         </div>
     </div>
+    <div class="course-category-mob">
+        <span class="category first tablinks active" data-course="intensiveEnglish" onclick="getData(event, 'intensiveEnglish', 6)">
+            <img src="/web/img/icons/course-info-1.png">
+        </span>
+        <span class="category second tablinks" data-course="ielts" onclick="getData(event, 'ielts', 4)">
+            <img src="/web/img/icons/course-info-2.png">
+        </span>
+        <span class="category third tablinks" data-course="kids" onclick="getData(event, 'kids', 6)">
+            <img src="/web/img/icons/course-info-3.png">
+        </span>
+        <span class="category fourth tablinks" data-course="otherLangs" onclick="getData(event, 'otherLangs', 4)">
+            <img src="/web/img/icons/course-info-4.png">
+        </span>
+        <span class="category fiveth tablinks" data-course="otherCourses" onclick="getData(event, 'otherCourses', 4)">
+            <img src="/web/img/icons/course-info-5.png">
+        </span>
+    </div>
 </section>
 <!-- Courses-->
 <section id="courses" class="red-arrows">
@@ -182,7 +199,7 @@ use yii\helpers\Html;
                 <p class="duration"><?= Yii::t('app', 'Длительность:') ?><span class="btn">3 <?= Yii::t('app', 'мес.') ?></span></p>
             </div>
             <div class="course-slider-item" data-course="ielts">
-                <h5>IELTS COMPLETE</h5>
+                <h5>IELTS 7+</h5>
                 <p><?= Yii::t('app', 'Переход с уровня Upper-intermediate на 7.0+.') ?></p>
                 <p class="duration"><?= Yii::t('app', 'Длительность:') ?><span class="btn">3 <?= Yii::t('app', 'мес.') ?></span></p>
             </div>
@@ -279,7 +296,7 @@ use yii\helpers\Html;
     <div class="container">
         <div class="row">
             <div class="col-lg-7 left">
-                <h1><?= Yii::t('app', 'Пройди тест и узнай <br class="hide-on-mob" /><span>что выбрать</span>') ?></h1>
+                <h1><?= Yii::t('app', 'Пройди тест и узнай <br class="hide-on-mob" /><span>что выбрать</span>!') ?></h1>
                 <p><?= Yii::t('app', 'Пройдите тест, после которого мы определим ваш <br class="hide-on-mob" />уровень и наиболее подходящие курс под ваши знания <br />и цели!') ?></p>
             </div>
             <div class="col-lg-5 right">
@@ -290,12 +307,12 @@ use yii\helpers\Html;
                     ]
                 ]); ?>
 
-                <div class="form-group col-lg-12 col-md-10">
+                <div class="form-group col-lg-12 col-md-10  offset-md-1">
                     <label class="form-label" for="name_first"><?= Yii::t('app', 'Ваше имя') ?></label>
                     <?= $form->field($model, 'fio')->textInput(['maxlength' => true, 'class' => 'form-control form-input', 'id' => 'name_first'])->label(false) ?>
                 </div>
 
-                <div class="form-group col-lg-12 col-md-10">
+                <div class="form-group col-lg-12 col-md-10  offset-md-1">
                     <label class="form-label" for="phone_first"><?= Yii::t('app', 'Номер телефона') ?></label>
                     <?= $form->field($model, 'tel')->textInput(['maxlength' => true, 'class' => 'form-control form-input', 'id' => 'phone_first'])->label(false) ?>
                 </div>
@@ -358,37 +375,37 @@ use yii\helpers\Html;
             </div>
             <div class="team-item"><img src="/web/img/1.jpg" />
                 <div>
-                    <h4>Harry Thompson</h4>
+                    <h4>Bekhruz Mukhtorov</h4>
                     <h5>IELTS Instructor</h5>
                 </div>
             </div>
             <div class="team-item"><img src="/web/img/2.jpg" />
                 <div>
-                    <h4>Harry Thompson</h4>
-                    <h5>IELTS Instructor</h5>
+                    <h4>Maftuna Nigmatullaeva</h4>
+                    <h5>ESL teacher</h5>
                 </div>
             </div>
             <div class="team-item"><img src="/web/img/3.jpg" />
                 <div>
-                    <h4>Harry Thompson</h4>
+                    <h4>Bekhruz Mukhtorov</h4>
                     <h5>IELTS Instructor</h5>
                 </div>
             </div>
             <div class="team-item"><img src="/web/img/4.jpg" />
                 <div>
-                    <h4>Harry Thompson</h4>
+                    <h4>Hilola Zhabborova</h4>
                     <h5>IELTS Instructor</h5>
                 </div>
             </div>
             <div class="team-item"><img src="/web/img/5.jpg" />
                 <div>
-                    <h4>Harry Thompson</h4>
+                    <h4>Toshev Asrorbek</h4>
                     <h5>IELTS Instructor</h5>
                 </div>
             </div>
             <div class="team-item"><img src="/web/img/6.jpg" />
                 <div>
-                    <h4>Harry Thompson</h4>
+                    <h4>Bakhodirova Shakhzoda</h4>
                     <h5>IELTS Instructor</h5>
                 </div>
             </div>
@@ -416,12 +433,12 @@ use yii\helpers\Html;
                     ]
                 ]); ?>
 
-                <div class="form-group col-lg-12 col-md-10">
+                <div class="form-group col-lg-12 col-md-12">
                     <label class="form-label" for="name"><?= Yii::t('app', 'Ваше имя') ?></label>
                     <?= $form->field($model, 'fio')->textInput(['maxlength' => true, 'class' => 'form-control form-input', 'id' => 'name'])->label(false) ?>
                 </div>
 
-                <div class="form-group col-lg-12 col-md-10">
+                <div class="form-group col-lg-12 col-md-12">
                     <label class="form-label" for="phone"><?= Yii::t('app', 'Номер телефона') ?></label>
                     <?= $form->field($model, 'tel')->textInput(['maxlength' => true, 'class' => 'form-control form-input', 'id' => 'phone'])->label(false) ?>
                 </div>
@@ -469,37 +486,52 @@ use yii\helpers\Html;
                     <div class="address-item col-lg-12 col-md-6 display-inline-block"><a href="https://www.instagram.com/thompson_uz/"><img src="/web/img/icons/instagram.png" /></a><a href="https://www.facebook.com/thompsonschooluz/"><img src="/web/img/icons/facebook.png" /></a><a href="#"><img src="/web/img/icons/twitter.png" /></a></div>
                 </div>
             </div>
-            <div class="col-lg-6 form" style="z-index: -1">
-                <form>
-                    <div class="form-row">
-                        <div class="form-group col-md-6">
-                            <label class="form-label" for="name-contact"><?= Yii::t('app', 'Ваше имя') ?></label>
-                            <input class="form-input form-control" id="name-contact" type="text" />
-                        </div>
-                        <div class="form-group col-md-6">
-                            <label class="form-label" for="phone-contact"><?= Yii::t('app', 'Номер телефона') ?></label>
-                            <input class="form-input form-control" id="phone-contact" type="text" />
-                        </div>
+            <div class="col-lg-6 form" style="z-index: 1">
+
+                <?php $form = ActiveForm::begin([
+                    'id' => 'contact-form',
+                    'fieldConfig' => [
+                        'options' => [
+                            'tag' => false,
+                        ],
+                    ],
+                ]); ?>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="name-contact"><?= Yii::t('app', 'Ваше имя') ?></label>
+                        <?= $form->field($contact_model, 'name')->textInput(['autofocus' => false, 'id' => 'name-contact', 'class' => 'form-input form-control'])->label(false) ?>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label" for="email">E-mail</label>
-                        <input class="form-input form-control" id="email" type="email" />
+                    <div class="form-group col-md-6">
+                        <label class="form-label" for="phone-contact"><?= Yii::t('app', 'Номер телефона') ?></label>
+                        <?= $form->field($contact_model, 'phone')->textInput(['id' => 'phone-contact', 'class' => 'form-input form-control'])->label(false) ?>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label" for="message"><?= Yii::t('app', 'Сообщение') ?></label>
-                        <input class="form-input form-control" id="message" type="text" />
-                    </div>
-                    <div class="for-btn"><a class="btn" href="#"><?= Yii::t('app', 'Отправить') ?></a></div>
-                </form>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">E-mail</label>
+                    <?= $form->field($contact_model, 'email')->textInput(['id' => 'email', 'class' => 'form-input form-control'])->label(false) ?>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message"><?= Yii::t('app', 'Сообщение') ?></label>
+                    <?= $form->field($contact_model, 'body')->textarea(['rows' => 6, 'id' => 'message', 'class' => 'form-input form-control'])->label(false) ?>
+                </div>
+
+
+                <div class="form-group for-btn">
+                    <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn', 'name' => 'contact-button']) ?>
+                </div>
+
+                <?php ActiveForm::end(); ?>
+
             </div>
         </div>
         <div class="cooperate col-lg-6">
             <div class="row">
-                <div class="col-lg-6 col-md-8">
+                <div class="col-lg-6 col-md-6">
                     <p class="pb-2"><?= Yii::t('app', 'Хотите сотрудничать <br> с Thompson school?') ?></p>
                 </div>
-                <div class="col-lg-6 col-md-8">
-                    <h4 class="text-white pt-3"><?= Yii::t('app', '') ?>+998 (97) 718-07-06</h4>
+                <div class="col-lg-6 col-md-6">
+                    <h4 class="text-white pt-3"><?= Yii::t('app', '') ?>+998 (78) 122-10-10</h4>
                 </div>
             </div>
         </div>

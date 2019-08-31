@@ -3,7 +3,8 @@
 .btn,
 :focus,
 button,
-input {
+input,
+textarea {
     outline: 0 !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
@@ -36,18 +37,30 @@ input {
         background: #fff!important;
         padding-left: 15px;
     }
-
-    /* the wheel with categories */
-    #category-wheel {
-        display: none!important;
-    }
-
+    
     .nav-test {
         background: #fff;
         padding-left: 15px!important;
-    }
+    } 
 
 }
+
+@media screen and (max-width: 1450px) {
+    .hello-harry {
+        top: 40px!important;
+    }
+    .hello-harry img {
+        transform: scaleX(-1);
+    }
+}
+
+@media screen and (min-width: 1450px) {
+    .hello-harry {
+        right: -130px;
+    }
+}
+
+
 
 @media screen and (min-width:992px) {
     .md {
@@ -120,6 +133,27 @@ html {
     .navbar-nav .nav-link {
         padding-right: 7px !important;
         padding-left: 7px !important;
+    }
+    .hello-harry {
+        display: none!important;
+    }
+    .section-bottom {
+        display: none!important;
+    }
+    .tip-first {
+        right: -30px!important;
+        bottom: -60px!important;
+    }
+    #main {
+        z-index: 999999;
+    }
+    .wheel-cutter {
+        display: none!important;
+    }
+}
+@media screen and (min-width:1200px) {
+    .course-category-mob {
+        display: none!important;
     }
 }
 
@@ -258,14 +292,14 @@ html {
 }
 
 #order-call .modal-body .form-group input,
-#take-test .right .form-group input {
+#take-test .right .form-group input,
+.red-form .form textarea {
     margin-top: 0;
     background: 0 0;
     border: 0;
     -webkit-border-radius: 0;
     border-radius: 0;
-    color: #000;
-    font-weight: 500;
+    color: #495057;
     padding-left: 0;
 }
 
@@ -564,7 +598,6 @@ html {
 
 .hello-harry {
     position: absolute;
-    right: -130px;
     top: 60px;
 }
 
@@ -1003,7 +1036,7 @@ section {
 @media screen and (max-width:991px) {
     #why {
         background: #a61d31;
-        height: 700px;
+        height: 750px;
         -webkit-box-align: unset;
         -webkit-align-items: unset;
         -ms-flex-align: unset;
@@ -1019,7 +1052,7 @@ section {
 
     #why .video {
         position: absolute;
-        bottom: 0;
+        bottom: 150px;
         left: 50%;
         -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
@@ -1100,7 +1133,7 @@ section {
 
 @media screen and (max-width:768px) {
     #courses {
-        padding-top: 170px;
+        padding-top: 70px;
     }
     .text {
         font-size: 15px!important;
@@ -1154,8 +1187,8 @@ section {
 }
 
 @media screen and (max-width:768px) {
-    #courses .course-slider-item .duration {
-        display: none;
+    .course-slider-item {
+        margin-bottom: 70px;
     }
 }
 
@@ -1884,6 +1917,9 @@ section {
     #target .left h1 {
         font-size: 44px;
     }
+    #team .slick-arrow {
+        display: none!important;
+    }
 }
 
 @media screen and (max-width:992px) {
@@ -1976,7 +2012,7 @@ section {
     font-size: 14px;
 }
 
-.red-form .form input {
+.red-form .form input, .red-form .form textarea {
     border-bottom: 1.5px solid #a61d31;
 }
 
@@ -2434,4 +2470,32 @@ nav {
     -webkit-user-drag: none;
     -webkit-user-select: none;
     -ms-user-select: none;
+}
+
+
+.course-category-mob {
+    margin-top: 100px;
+    background: #A61D31;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    text-align: center;
+    padding: 35px 0;
+    align-items: center;
+}
+.course-category-mob span img {
+    transform: scale(0.7);
+}
+.course-category-mob .active {
+    position: relative;
+}
+.course-category-mob .active:before {
+    content:"";
+    position: absolute;
+    width:50px;
+    height:50px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
 }

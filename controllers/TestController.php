@@ -12,6 +12,9 @@ use yii\web\Response;
 use app\models\Test;
 use yii\db\Expression;
 use app\models\CallRequest;
+use app\models\Talabalar;
+use app\modules\admin\models\Natijalar;
+
 /**
  * TestController implements the CRUD actions for Test model.
  */
@@ -44,13 +47,13 @@ class TestController extends AppController
         $this->layout = 'test';
         $session = Yii::$app->session;
         $session->remove('test');
-        $test = Test::find()->where(['fan'=>$sub_id])->all();
+        $test = Test::find()->where(['fan' => $sub_id])->all();
         $fan = Fanlar::findOne($sub_id);
         $session['soni'] = count($test);
         $this->setMeta($fan->nomi . ' 😀👌✅', 'img/site-img.jpg');
         $session['javoblar'] = [];
         $data = [];
-        foreach($test as $t){
+        foreach ($test as $t) {
             $data[] = $t->id;
         }
 
@@ -59,53 +62,66 @@ class TestController extends AppController
             'sub_id' => $sub_id,
             'test' => $test,
         ]);
-         
     }
     public function actionCheck()
     {
 
-    if (Yii::$app->request->isAjax) {
-        $session = Yii::$app->session;
         $data = Yii::$app->request->post();
-        $value = explode("-", $data['answer']);
+        $results = $data['results'];
 
-        $javob = $session['javoblar'];
-        $bool = true;
-        $i = 0;
-        foreach ( $javob as $j){
-            if ($j['test_id'] == $value[1]){                
-                unset($javob[$i]);
-                $bool = false;
-                break;
-            }
-            $i++;
+        $questions_arr = [];
+        $true = 0;
+        $false = 0;
+
+        $session = Yii::$app->session;
+        $session->open();
+
+        $questions = Test::find()->where(['fan' => $data['fan_id']])->all();
+        // direction
+        $fan = Fanlar::findOne($data['fan_id']);
+        // it is tries of people
+        $natijalar = new Natijalar();
+
+
+        // count true and false answers
+        foreach ($questions as $question) {
+            $questions_arr[$question['id']] = $question;
         }
-        
-        $tanlov = [
-            "test_id" => $value[1],
-            "javob" => $value[0]
-        ];
-        if ($bool){            
-            $bir = $session['javoblar'];
-            $bir[] = $tanlov;
-            $session['javoblar'] = $bir;
-        }else{
-            $bir = $session['javoblar'];
-            $bir[$i] = $tanlov;
-            $session['javoblar'] = $bir;
-        }  
-      
-      }
+        if ($results) {
+            foreach ($results as $answer) {
+                if ($questions_arr[$answer[0]]) {
+                    if ($questions_arr[$answer[0]]['tj'] == $answer[1]) {
+                        $true++;
+                    }
+                }
+            }
+        }
+        $false = count($questions) - $true;
+
+        // add the user's try
+        $natijalar->tugri = $true;
+        $natijalar->xato = $false;
+        $natijalar->fio = $session['fio'];
+        $natijalar->fan = $fan->nomi;
+        $natijalar->telefon = $session['tel'];
+        $natijalar->vaqti = date('Y-m-d H:i:s');
+        $natijalar->save();
+
+        // write in sessions quantity of true and false answers
+        $session['true'] = $true;
+        $session['false'] = $false;
+        $session['fan'] = $fan->nomi;
     }
     public function actionTestreview()
-    {   
+    {
         $session = Yii::$app->session;
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return $session['test'];
-    }    
+    }
     public function actionEnd()
-    {   
+    {
         $calls_model = new CallRequest();
+        $session = Yii::$app->session;
 
         if ($calls_model->load(Yii::$app->request->post())) {
             $calls_model->date_request = date('Y-m-d H:i:s');
@@ -114,26 +130,27 @@ class TestController extends AppController
 
         $this->layout = 'test';
         $this->setMeta('Congratulation 👏👏👏', 'img/site-img.jpg');
-        return $this->render('javob');
-    }    
+        return $this->render('javob', compact('session'));
+    }
     public function actionTestasl()
-    {   
+    {
         $session = Yii::$app->session;
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return $session['asl'];
-    }    
+    }
     public function actionTestr()
-    {   
+    {
         $session = Yii::$app->session;
         $javob = $session['javoblar'];
         $bool = true;
-        
-        foreach ($javob as $j){
-            print_r($j['test_id']);echo "<br>";
+
+        foreach ($javob as $j) {
+            print_r($j['test_id']);
+            echo "<br>";
         }
     }
     public function actionAnswerreview()
-    {   
+    {
         $session = Yii::$app->session;
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         return $session['javoblar'];

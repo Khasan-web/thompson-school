@@ -51,11 +51,11 @@ $(document).ready(function () {
     });
 
 
-    $('input').focus(function () {
+    $('input, textarea').focus(function () {
         $(this).parents('.form-group').addClass('focused');
     });
 
-    $('input').blur(function () {
+    $('input, textarea').blur(function () {
         var inputValue = $(this).val();
         if (inputValue == "") {
             $(this).removeClass('filled');
@@ -121,7 +121,7 @@ $(document).ready(function () {
             scrollTop: top
         }, 300);
     });
-
+    
 });
 
 
@@ -131,33 +131,36 @@ function getData(evt, category, qty) {
     $('#courses .' + category).show();
 
     if (!$('#courses .' + category).hasClass('slick-slider')) {
-        $('#courses .' + category).slick({
-            autoplay: false,
-            autoplaySpeed: 3000,
-            dots: true,
-            infinite: false,
-            speed: 300,
-            arrows: true,
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            vertical: false,
-            responsive: [{
-                breakpoint: 992,
-                settings: {
-                    mobileFirst: true,
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    vertical: false
-                },
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    vertical: true
-                }
-            }]
-        });
+        if ($(document).width() > 992) {
+            $('#courses .' + category).slick({
+                autoplay: false,
+                autoplaySpeed: 3000,
+                dots: true,
+                infinite: false,
+                speed: 300,
+                arrows: true,
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                vertical: false,
+                responsive: [{
+                    breakpoint: 992,
+                    settings: {
+                        mobileFirst: true,
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        vertical: false
+                    },
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1,
+                        vertical: true
+                    }
+                }]
+            });
+        }
     }
+    
 
     if (!evt) {
         // Show amount of corses in a category
