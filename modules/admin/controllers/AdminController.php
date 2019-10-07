@@ -158,8 +158,8 @@ class AdminController extends AppAdminController
 
             if ($model->rasmi && $model->validate()) {
                 $son =  time();
-                $model->rasmi->saveAs('/web/img/admin/' . $son . '.' . $model->rasmi->extension);
-                $model->rasmi = Url::base(true) . '/web/img/admin/'  . $son . '.' . $model->rasmi->extension;
+                $model->rasmi->saveAs('img/admin/' . $son . '.' . $model->rasmi->extension);
+                $model->rasmi = $son . '.' . $model->rasmi->extension;
                 $model->save();
             }
             return $this->redirect('test');

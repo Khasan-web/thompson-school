@@ -121,7 +121,19 @@ $(document).ready(function () {
             scrollTop: top
         }, 300);
     });
-    
+
+
+    // collapse navbar on click somewhere
+
+    $('body').on('click', function () {
+        $('.navbar-collapse').collapse('hide');
+    });
+
+    // collapse navbar on scroll
+    $(document).scroll(function () {
+        $('.navbar-collapse').collapse('hide');
+    });
+
 });
 
 
@@ -160,7 +172,7 @@ function getData(evt, category, qty) {
             });
         }
     }
-    
+
 
     if (!evt) {
         // Show amount of corses in a category

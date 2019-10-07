@@ -81,8 +81,14 @@ class SiteController extends AppController
             return $this->redirect(['talabalar/selsub']);
         }
 
-        if ($contact_model->load(Yii::$app->request->post())) {
-            $contact_model->contact($contact_model->email);
+        if ($contact_model->load(Yii::$app->request->post()) && $contact_model->validate()) {
+            Yii::$app->mailer->compose()
+            ->setFrom([$contact_model->email => $contact_model->name])
+            ->setTo(Yii::$app->params['adminEmail'])
+            ->setSubject('Thompson landing | Contact form')
+            ->setTextBody($contact_model->body)
+            ->send();
+
             return $this->refresh();
         }
 

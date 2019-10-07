@@ -19,7 +19,7 @@
 
                 <div class="test-cards-item col-lg-4 col-md-5 col-12 mb-5">
                     <div class="card-image">
-                        <img src="<?= $fan->rasmi ?>" />
+                        <img src="/web/img/admin/<?= $fan->rasmi ?>" />
                     </div>
                     <div class="for-text">
                         <h4><?= $fan->nomi ?></h4>

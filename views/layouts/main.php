@@ -109,11 +109,11 @@ AppAsset::register($this);
           </div>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ml-auto">
-              <li class="nav-item active"><a class="nav-link" href="#why"><?= Yii::t('app', 'Почему мы?') ?><span class="sr-only">(current)</span></a>
-              <li class="nav-item active"><a class="nav-link" href="#course-info"><?= Yii::t('app', 'Наши курсы')?></a></li>
-              <li class="nav-item"><a class="nav-link" href="#comments"><?= Yii::t('app', 'Мнения людей')?></a></li>
-              <li class="nav-item"><a class="nav-link" href="#team"><?= Yii::t('app', 'Наша команда')?></a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact"><?= Yii::t('app', 'Вакансии')?></a></li>
+              <li class="nav-item active"><a class="nav-link" href="/#why"><?= Yii::t('app', 'Почему мы?') ?><span class="sr-only">(current)</span></a>
+              <li class="nav-item active"><a class="nav-link" href="/#course-info"><?= Yii::t('app', 'Наши курсы')?></a></li>
+              <li class="nav-item"><a class="nav-link" href="/#comments"><?= Yii::t('app', 'Мнения людей')?></a></li>
+              <li class="nav-item"><a class="nav-link" href="/#team"><?= Yii::t('app', 'Наша команда')?></a></li>
+              <li class="nav-item"><a class="nav-link" href="/#contact"><?= Yii::t('app', 'Вакансии')?></a></li>
               <li class="nav-item">
                 <div class="nav-contact">
                   <p>+998 (78) 122 10 10</p><span class="lg"><img src="/web/img/icons/nav-call.png" /></span><span class="md"><img src="/web/img/icons/nav-call-red.png" /></span><a href="#" data-toggle="modal" data-target="#order-call"><?= Yii::t('app', 'Заказать звонок')?> </a>
@@ -147,7 +147,7 @@ AppAsset::register($this);
       <div class="container">
         <div class="row">
           <div class="col-lg-12 for-stick">
-            <h1 class="main-title wow fadeInLeft"><?= Yii::t('app', 'Мы научим вас<span> мощному <br />Английскому Языку<br /></span>и еще многому!')?></h1>
+            <h1 class="main-title wow fadeInLeft"><?= Yii::t('app', 'Мы научим вас<span> мощному <br />Английскому Языку<br /></span>и многому другому!')?></h1>
           </div>
         </div>
         <div class="row position-relative">

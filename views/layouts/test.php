@@ -53,11 +53,11 @@ AppAsset::register($this);
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span><i class="fa fa-bars"></i></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto ml-auto">
-              <li class="nav-item active"><a class="nav-link" href="#why"><?= Yii::t('app', 'Почему мы?') ?><span class="sr-only">(current)</span></a>
-              <li class="nav-item active"><a class="nav-link" href="#course-info"><?= Yii::t('app', 'Наши курсы') ?></a></li>
-              <li class="nav-item"><a class="nav-link" href="#comments"><?= Yii::t('app', 'Мнения людей') ?></a></li>
-              <li class="nav-item"><a class="nav-link" href="#team"><?= Yii::t('app', 'Наша команда') ?></a></li>
-              <li class="nav-item"><a class="nav-link" href="#contact"><?= Yii::t('app', 'Вакансии') ?></a></li>
+            <li class="nav-item active"><a class="nav-link" href="/#why"><?= Yii::t('app', 'Почему мы?') ?><span class="sr-only">(current)</span></a>
+              <li class="nav-item"><a class="nav-link" href="/#course-info"><?= Yii::t('app', 'Наши курсы')?></a></li>
+              <li class="nav-item"><a class="nav-link" href="/#comments"><?= Yii::t('app', 'Мнения людей')?></a></li>
+              <li class="nav-item"><a class="nav-link" href="/#team"><?= Yii::t('app', 'Наша команда')?></a></li>
+              <li class="nav-item"><a class="nav-link" href="/#contact"><?= Yii::t('app', 'Вакансии')?></a></li>
               <li class="nav-item lang-sm dropdown-sm">
                 <div class="lang dropdown">
                   <a class="dropbtn" href="#"><img src="/web/img/icons/world-lang.png" /></a>

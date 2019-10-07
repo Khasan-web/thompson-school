@@ -36,12 +36,12 @@ if (strpos($fan, 'placement') !== false) {
                     <p class="result"><?= Yii::t('app', 'Ваш результат')?>: <?= $tug ?> / <?= $session['soni'] ?></p>
                     <h3 class="level"><?= $eng_lvl ?></h3>
                     <p class="info"><?= Yii::t('app', 'Поздравляем! Вы сделали первый шаг к достижению ваших целей в Thompson school.')?> </p>
-                    <p class="info"><?= Yii::t('app', 'Наш менеджер скоро вам перезвонить')?></p>
+                    <p class="info"><?= Yii::t('app', 'Наш менеджер скоро вам перезвонит')?></p>
                     <a class="back-to-main" href="/"><i class="fa fa-arrow-left"></i><?= Yii::t('app', 'Главная страница')?> </a>
                 <?php else : ?>
                     <h3 class="level"><?= Yii::t('app', 'Ваш результат')?> <?= $tug ?> / <?= $session['soni'] ?></h3>
                     <p class="info"><?= Yii::t('app', 'Поздравляем! Вы сделали первый шаг к достижению ваших целей в Thompson school.')?></p>
-                    <p class="info"><?= Yii::t('app', 'Наш менеджер скоро вам перезвонить')?></p>
+                    <p class="info"><?= Yii::t('app', 'Наш менеджер скоро вам перезвонит')?></p>
                     <a class="back-to-main" href="/"><i class="fa fa-arrow-left"></i><?= Yii::t('app', 'Главная страница')?> </a>
                 <?php endif; ?>
             </div>

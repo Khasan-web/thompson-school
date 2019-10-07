@@ -1,6 +1,7 @@
 <?php
 
 use app\models\Fanlar;
+use yii\helpers\Url;
 
 $session = Yii::$app->session;
 $fan = Fanlar::findOne($sub_id)
@@ -55,7 +56,7 @@ $fan = Fanlar::findOne($sub_id)
     <?php $i++;
     endforeach; ?>
     <div id="result"></div>
-    <a class="get-result btn" href="/test/end"><?= Yii::t('app', 'Узнать результат!') ?></a>
+    <a class="get-result btn" href="<?= Url::to(['test/end'])?>"><?= Yii::t('app', 'Узнать результат!') ?></a>
     <br>
     <br>
   </div>

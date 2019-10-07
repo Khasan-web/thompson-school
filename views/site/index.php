@@ -9,7 +9,7 @@ use yii\helpers\Html;
 <!-- Features-->
 <section id="features" class="space-section">
     <div class="container">
-        <h1 class="features-title"><?= Yii::t('app', 'Thompson school, как<br/><span>Лучший Выбор</span>') ?></h1>
+        <h1 class="features-title"><?= Yii::t('app', 'Thompson school как<br/><span>Лучший Выбор</span>') ?></h1>
         <div class="features-block">
             <div class="row">
                 <div class="col-lg-6 features-item wow fadeInLeft">
@@ -26,7 +26,7 @@ use yii\helpers\Html;
                         <div class="col-2 icon wow fadeInLeft" data-wow-delay="0.6s"><img src="/web/img/icons/reason-2.png" /><span class="number-bg">2</span></div>
                         <div class="col-10 mt-3 text">
                             <h5 class="wow fadeInLeft"><?= Yii::t('app', 'Проверенные материалы') ?></h5>
-                            <p><?= Yii::t('app', 'В процессе курсов используются только стопроцентно работающие материалы дающие полные знания.') ?></p>
+                            <p><?= Yii::t('app', 'В процессе курсов используются только стопроцентно гарантированные материалы.') ?></p>
                         </div>
                     </div>
                 </div>
@@ -36,7 +36,7 @@ use yii\helpers\Html;
                         <div class="col-2 icon wow fadeInLeft" data-wow-delay="0.9s"><img src="/web/img/icons/reason-3.png" /><span class="number-bg">3 </span></div>
                         <div class="col-10 mt-3 text">
                             <h5 class="wow fadeInLeft"><?= Yii::t('app', '100% результат') ?></h5>
-                            <p><?= Yii::t('app', 'Команда Thompson school сделает все что-бы каждый ученик несомненно видел результат своих стараний.') ?></p>
+                            <p><?= Yii::t('app', 'Команда Thompson school сделает все, чтобы каждый ученик несомненно видел результат своих стараний.') ?></p>
                         </div>
                     </div>
                 </div>
@@ -62,8 +62,8 @@ use yii\helpers\Html;
         <div class="row">
             <div class="col-lg-6 why-item wow fadeInLeft">
                 <h1 class="why-title"><?= Yii::t('app', 'Почему <span>вам нужны</span><br />наши курсы?') ?></h1>
-                <p><?= Yii::t('app', 'Мы не просто учебный центр, а одна большая семья с единственной целью, помочь нашим студентам в достижении их цели!') ?></p>
-                <p><?= Yii::t('app', 'С нами вы точно сможете изучить языки максимально эффективно и максимально в короткий срок. Вас ждёт: профессиональные и крутые преподаватели, доброжелательная администрация, интерактивные занятия и мощная доза мотивации!') ?></p>
+                <p><?= Yii::t('app', 'Мы не просто учебный центр, а одна большая семья с единственной целью — помочь нашим студентам в достижении их цели!') ?></p>
+                <p><?= Yii::t('app', 'С нами вы точно сможете изучить языки максимально эффективно и в максимально короткий срок. Вас ждут: профессиональные и крутые преподаватели, доброжелательная администрация, интерактивные занятия и мощная доза мотивации!') ?></p>
             </div>
             <div class="col-lg-6 video">
                 <div class="circle-wrapper">
@@ -296,7 +296,7 @@ use yii\helpers\Html;
     <div class="container">
         <div class="row">
             <div class="col-lg-7 left">
-                <h1><?= Yii::t('app', 'Пройди тест и узнай <br class="hide-on-mob" /><span>что выбрать</span>!') ?></h1>
+                <h1><?= Yii::t('app', 'Пройди тест и узнай, <br class="hide-on-mob" /><span>что выбрать</span>!') ?></h1>
                 <p><?= Yii::t('app', 'Пройдите тест, после которого мы определим ваш <br class="hide-on-mob" />уровень и наиболее подходящие курс под ваши знания <br />и цели!') ?></p>
             </div>
             <div class="col-lg-5 right">
@@ -422,7 +422,7 @@ use yii\helpers\Html;
             <div class="col-lg-6 left wow fadeInLeft">
                 <h1><?= Yii::t('app', 'А вы готовы начать<br />свое <span>незабываемое</span><br />обучение?') ?></h1>
                 <p><?= Yii::t('app', 'Становясь частью Thompson school, вы делаете огромнейший вклад в себя и в свое будущее, где вы будете успешно применять те знания, которые получите. Как первый шаг, пройдите тест для определения вашего курса!') ?></p>
-                <p><?= Yii::t('app', 'Если вы родитель закажите звонок, мы свяжемся с вами и обсудим все детали будущего образования ваших детей в Thompson school.') ?></p>
+                <p><?= Yii::t('app', 'Если вы родитель — закажите звонок. Мы свяжемся с вами и обсудим все детали будущего образования ваших детей в Thompson school.') ?></p>
             </div>
             <div class="col-lg-5 right">
 

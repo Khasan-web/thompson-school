@@ -12,7 +12,6 @@ class ContactForm extends Model
 {
     public $name;
     public $email;
-    public $subject;
     public $body;
     public $phone;
 
@@ -24,21 +23,21 @@ class ContactForm extends Model
     {
         return [
             // name, phoen and body are required
-            [['name', 'phone', 'body'], 'required'],
+            [['name', 'phone', 'email'], 'required'],
             // email has to be a valid email address
             ['email', 'email'],
         ];
     }
 
-    /**
-     * @return array customized attribute labels
-     */
-    public function attributeLabels()
-    {
-        return [
-            'verifyCode' => 'Verification Code',
-        ];
-    }
+    // /**
+    //  * @return array customized attribute labels
+    //  */
+    // public function attributeLabels()
+    // {
+    //     return [
+    //         'verifyCode' => 'Verification Code',
+    //     ];
+    // }
 
     /**
      * Sends an email to the specified email address using the information collected by this model.
@@ -49,14 +48,16 @@ class ContactForm extends Model
     {
         if ($this->validate()) {
             Yii::$app->mailer->compose()
-                ->setTo('support@thompson.uz')
+                ->setTo($email)
                 ->setFrom([$this->email => $this->name])
                 ->setSubject('Thompson landing | Contact form')
                 ->setTextBody($this->body)
                 ->send();
 
             return true;
+        } else {
+            return false;
         }
-        return false;
+        
     }
 }
